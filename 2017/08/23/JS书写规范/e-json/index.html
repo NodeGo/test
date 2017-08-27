@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="E-JSON,E-JSON编码规范," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Chelsia Daily Book" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="简介E-JSON的设计目标是使业务系统向浏览器端传递的JSON数据保持一致，容易被理解和处理，并兼顾传输的数据量。E-JSON依托于http协议（rfc2616）与JSON数据交换格式（rfc4627）。">
+<meta name="keywords" content="E-JSON,E-JSON编码规范">
+<meta property="og:type" content="article">
+<meta property="og:title" content="E-JSON数据传输标准">
+<meta property="og:url" content="https://www.hqxdb.com/2017/08/23/JS书写规范/e-json/index.html">
+<meta property="og:site_name" content="Chelsia Daily Book">
+<meta property="og:description" content="简介E-JSON的设计目标是使业务系统向浏览器端传递的JSON数据保持一致，容易被理解和处理，并兼顾传输的数据量。E-JSON依托于http协议（rfc2616）与JSON数据交换格式（rfc4627）。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-08-27T02:51:38.489Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="E-JSON数据传输标准">
+<meta name="twitter:description" content="简介E-JSON的设计目标是使业务系统向浏览器端传递的JSON数据保持一致，容易被理解和处理，并兼顾传输的数据量。E-JSON依托于http协议（rfc2616）与JSON数据交换格式（rfc4627）。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '7G3J3OYB0V',
+      apiKey: '477d2f10448568bb02365fe59d6be944',
+      indexName: 'hqxdb',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"输入关键字","hits_empty":"没有找到与: ${query} 相关的内容","hits_stats":"${hits} 条相关记录， 共耗时 ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.hqxdb.com/2017/08/23/JS书写规范/e-json/"/>
+
+
+
+
+
+  <title>E-JSON数据传输标准 | Chelsia Daily Book</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f5c3843939bf0a0093a4220362bf14be";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Chelsia Daily Book</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+           
+
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.hqxdb.com/2017/08/23/JS书写规范/e-json/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chelsia">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/logo.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chelsia Daily Book">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">E-JSON数据传输标准</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-23T22:06:46+08:00">
+                2017-08-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/规范/" itemprop="url" rel="index">
+                    <span itemprop="name">规范</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/08/23/JS书写规范/e-json/" class="leancloud_visitors" data-flag-title="E-JSON数据传输标准">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2,483
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  10分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+      
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>E-JSON的设计目标是使业务系统向浏览器端传递的JSON数据保持一致，容易被理解和处理，并兼顾传输的数据量。E-JSON依托于http协议（rfc2616）与JSON数据交换格式（rfc4627）。</p>
+<a id="more"></a> 
+<h3 id="编撰"><a href="#编撰" class="headerlink" title="编撰"></a>编撰</h3><p>erik, 欧阳先伟</p>
+<h3 id="评审"><a href="#评审" class="headerlink" title="评审"></a>评审</h3><p>曹特磊，蓝晓斌，李铮，林攀辉，童遥，王志寿，严俊羿</p>
+<h3 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h3><p>在本文档中，使用的关键字会以中文+括号包含的关键字英文表示：必须(MUST)。关键字”MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL”被定义在rfc2119中。</p>
+<!-- more --> 
+<h2 id="JSON数据类型"><a href="#JSON数据类型" class="headerlink" title="JSON数据类型"></a>JSON数据类型</h2><p>JSON（JavaScript Object Notation）是一种轻量级，基于文本，语言无关的数据交换格式。其包括了基本数据类型4种和复合数据类型2种，共6种数据类型。在下面章节中，JSON数据类型的表示法为JSON+空格+数据类型，如：JSON Array。</p>
+<p>传输的数据，包括对象属性以及数组成员， <em>必须(MUST)</em> 是6种JSON数据类型之一。 <em>杜绝(MUST NOT)</em> 使用function、Date等js对象类型。</p>
+<h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><ul>
+<li>Number可以表示整数和浮点数。</li>
+<li>Boolean可以表示真假，值为true或false。</li>
+<li>String表示一个字符串。</li>
+<li>Null通常用于表示空对象。</li>
+</ul>
+<p>“true”和true，这两个数据代表的是不同的数据类型。非字符串类型数据输出时一定 <em>不要(MUST NOT)</em> 为两端加上双引号，否则可能产生不希望的后果（如if中判断”false”的结果是true）。其他容易产生错误的例子如：0和”0”等。</p>
+<h3 id="复合数据类型"><a href="#复合数据类型" class="headerlink" title="复合数据类型"></a>复合数据类型</h3><p>Object是无序的集合，以键值对的方式保持数据。一个Object中包含零到多个name/value的数据，数据间以逗号(,)分隔。name为String类型，value可以是任意类型的数据。</p>
+<p>Object的最后一个元素之后一定 <em>不要(MUST NOT)</em> 加上分隔符的逗号，否则可能导致解析出错。</p>
+<p>Array(数组)为多个值的有序集合，数组元素间以逗号(,)分隔。</p>
+<h2 id="http响应头"><a href="#http响应头" class="headerlink" title="http响应头"></a>http响应头</h2><h3 id="status"><a href="#status" class="headerlink" title="status"></a>status</h3><p>http响应的status <em>必须(MUST)</em> 为200。通常JSON数据被用于通过XMLHttpRequest对象访问，通过javascript进行处理。返回错误的状态码可能导致错误不被响应，数据不被处理。</p>
+<h3 id="Content-Type"><a href="#Content-Type" class="headerlink" title="Content-Type"></a>Content-Type</h3><p>Content-Type字段定义了响应体的类型。一般情况下，浏览器会根据该类型对内容进行正确的处理。对于传输JSON数据的响应，Content-Type <em>推荐(RECOMMENDED)</em> 设置为”text/javascript”或”text/plain”。 <em>避免(MUST NOT)</em> 将Context-Type设置为text/html，否则可能导致安全问题。</p>
+<p>Content-Type中可以指定字符集。通常 <em>需要(SHOULD)</em> 明确指定一个字符集。如果是通过XMLHTTPRequest请求的数据，并且字符编码为UTF-8时，可以不指定字符集。</p>
+<h4 id="Context-Type示例"><a href="#Context-Type示例" class="headerlink" title="Context-Type示例"></a>Context-Type示例</h4><pre><code>text/javascript;charset=UTF-8
+</code></pre><h2 id="数据字段"><a href="#数据字段" class="headerlink" title="数据字段"></a>数据字段</h2><p>返回的数据包含在http响应体中。数据 <em>必须(MUST)</em> 是一个JSON Object。该Object可能包含3个字段：status，statusInfo，data。</p>
+<h3 id="status-1"><a href="#status-1" class="headerlink" title="status"></a>status</h3><p>status字段 <em>必须(MUST)</em> 是一个不小于0的JSON Number整数，表示请求的状态。这个字段 <em>可以(SHOULD)</em> 被省略，省略时和为0时表示同一含义。</p>
+<p>0：表示server端理解了请求，成功处理并返回。</p>
+<p>非0：表示发生错误。 <em>可以(SHOULD)</em> 根据错误类型扩展错误码。</p>
+<h4 id="一个成功请求的status字段"><a href="#一个成功请求的status字段" class="headerlink" title="一个成功请求的status字段"></a>一个成功请求的status字段</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"status"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"data"</span>: <span class="string">"hello world!"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="statusInfo"><a href="#statusInfo" class="headerlink" title="statusInfo"></a>statusInfo</h3><p>statusInfo字段 <em>通常(SHOULD)</em> 是一个JSON String或JSON Object，表示除了请求状态外server端想要对status做出的说明，使client端能够获取更多信息进行后续处理。这个字段是 <em>可选的(OPTIONAL)</em> 。下面的两个例子中，statusInfo字段的信息都可以用于client端程序的后续处理，但是粒度和处理方式会有不同。</p>
+<h4 id="client端参数错误的statusInfo"><a href="#client端参数错误的statusInfo" class="headerlink" title="client端参数错误的statusInfo"></a>client端参数错误的statusInfo</h4><p>简单说明的statusInfo：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"status"</span>: <span class="number">1</span>,</div><div class="line">    <span class="attr">"statusInfo"</span>: <span class="string">"参数错误"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>具有更多信息的statusInfo：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"status"</span>: <span class="number">1</span>,</div><div class="line">    <span class="attr">"statusInfo"</span>: &#123;</div><div class="line">        <span class="attr">"text"</span>: <span class="string">"参数错误"</span>,</div><div class="line">        <span class="attr">"parameters"</span>: &#123;</div><div class="line">            <span class="attr">"email"</span>: <span class="string">"电子邮件格式不正确"</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="data"><a href="#data" class="headerlink" title="data"></a>data</h3><p>data字段可以是除JSON Null之外的任意JSON类型，表示请求返回的数据主体。这个字段是 <em>可选的(OPTIONAL)</em> 。数据主体data包含了在请求成功时有意义的数据。</p>
+<h4 id="一个查询姓名请求的返回数据"><a href="#一个查询姓名请求的返回数据" class="headerlink" title="一个查询姓名请求的返回数据"></a>一个查询姓名请求的返回数据</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"status"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"data"</span>: <span class="string">"Lily"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="数据场景"><a href="#数据场景" class="headerlink" title="数据场景"></a>数据场景</h2><p>本章为常见数据场景定义了通用的标准数据格式，用于数据传输和使用。额外地，本章为部分可能大数据量传输的数据场景定义了变通数据格式。变通数据格式可在数据解析阶段转换成标准数据格式。</p>
+<p>变通数据格式 <em>必须(MUST)</em> 是一个JSON Object，其中 <em>必须(MUST)</em> 包含e-type属性和data属性。e-type属性标识数据类型，便于对数据进行解析；data属性包含变通后的数据。变通数据 <em>可以(MAY)</em> 包含其他的属性，标识数据的其他扩展信息。</p>
+<p>变通数据格式的e-type属性定义了table值。e-type属性可以使用者扩展其他属性值，扩展的属性值 <em>必须(MUST)</em> 以“项目缩写-名称”命名，如“fc-list”，自主解析。</p>
+<h3 id="日期类型"><a href="#日期类型" class="headerlink" title="日期类型"></a>日期类型</h3><p>日期类型不属于JSON数据类型。对于日期类型，我们 <em>必须(MUST)</em> 使用JSON String来表示。为了让日期能够更容易的被显示和被解析，对于日期我们 <em>应当(SHOULD)</em> 使用更适合internet的格式，遵循rfc3339。</p>
+<h4 id="数据场景：日期"><a href="#数据场景：日期" class="headerlink" title="数据场景：日期"></a>数据场景：日期</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"status"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"data"</span>: <span class="string">"2010-10-10"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h3><p>记录代表二维表中的一行，通常用于表示某个具体事务抽象的属性。标准记录数据 <em>必须(MUST)</em> 为一个JSON Object，记录的主键命名 <em>必须(MUST)</em> 为“id”。单条记录数据不包含变通数据格式。</p>
+<h4 id="数据场景：记录"><a href="#数据场景：记录" class="headerlink" title="数据场景：记录"></a>数据场景：记录</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"id"</span>: <span class="number">250</span>,</div><div class="line">    <span class="attr">"name"</span>: <span class="string">"erik"</span>,</div><div class="line">    <span class="attr">"sex"</span>: <span class="number">1</span>,</div><div class="line">    <span class="attr">"age"</span>: <span class="number">18</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="二维表"><a href="#二维表" class="headerlink" title="二维表"></a>二维表</h3><p>二维表类型表识为table，是关系模型的主要数据结构。二维表结构具有变通数据格式。标准二维表数据 <em>必须(MUST)</em> 以一维JSON Array形式表示，JSON Array中每一项是一个JSON Object，代表一条记录。JSON Object的每个成员代表一个字段。每条记录的主键命名 <em>必须(MUST)</em> 为”id”。</p>
+<p>在标准二维表中，字段名在每条记录中都被传输，会造成额外的数据量传输。这个问题会随着记录数的增大会更加突出。为了减少传输数据量，变通格式使用二维JSON Array传输数据，扩展fields属性用于字段说明。fields字段为JSON Array。</p>
+<h4 id="数据场景：标准二维表"><a href="#数据场景：标准二维表" class="headerlink" title="数据场景：标准二维表"></a>数据场景：标准二维表</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">    &#123;</div><div class="line">        <span class="attr">"id"</span>: <span class="number">250</span>,</div><div class="line">        <span class="attr">"name"</span>: <span class="string">"erik"</span>,</div><div class="line">        <span class="attr">"sex"</span>: <span class="number">1</span>,</div><div class="line">        <span class="attr">"age"</span>: <span class="number">18</span></div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">        <span class="attr">"id"</span>: <span class="number">251</span>,</div><div class="line">        <span class="attr">"name"</span>: <span class="string">"欧阳先伟"</span>,</div><div class="line">        <span class="attr">"sex"</span>: <span class="number">1</span>,</div><div class="line">        <span class="attr">"age"</span>: <span class="number">28</span></div><div class="line">    &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
+<h4 id="数据场景：变通二维表"><a href="#数据场景：变通二维表" class="headerlink" title="数据场景：变通二维表"></a>数据场景：变通二维表</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"e-type"</span>: <span class="string">"table"</span>,</div><div class="line">    <span class="attr">"fields"</span>: [<span class="string">"id"</span>, <span class="string">"name"</span>, <span class="string">"sex"</span>, <span class="string">"age"</span>],</div><div class="line">    <span class="attr">"data"</span>: [</div><div class="line">        [<span class="number">250</span>, <span class="string">"erik"</span>, <span class="number">1</span>, <span class="number">18</span>],</div><div class="line">        [<span class="number">251</span>, <span class="string">"欧阳先伟"</span>, <span class="number">1</span>, <span class="number">28</span>]</div><div class="line">    ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="数据页"><a href="#数据页" class="headerlink" title="数据页"></a>数据页</h3><p>数据页是列表数据常用的数据方式，可能通过查询或翻页获得数据。数据页是二维表数据的包装，包含列表数据本身更多的信息。</p>
+<p>数据页 <em>必须(MUST)</em> 是一个JSON Object，其中 <em>必须(MUST)</em> 包含的属性为data。data是一个二维表。数据页可以包括一些 <em>可选(OPTIONAL)</em> 的属性，表示当前数据页的信息。下表列举了数据页的可选属性。</p>
+<h3 id="数据页可选属性"><a href="#数据页可选属性" class="headerlink" title="数据页可选属性"></a>数据页可选属性</h3><ul>
+<li>{Number} page - 当前页码，计数 <em>必须(MUST)</em> 为不小于0的整数，从0开始。</li>
+<li>{Number} pageSize - 每页显示条数， <em>必须(MUST)</em> 大于0。</li>
+<li>{Number} total - 列表总记录数， <em>必须(MUST)</em> 为不小于0的整数。表示当前条件下所有记录的数目，非本页的记录数。</li>
+<li>{String} orderBy - 列表排序规则。多个排序规则之间以逗号分割（,）；正序或倒序以asc或desc表示，与字段名之间以一个空格间隔。例：”id desc,name asc”</li>
+<li>{String} keyword - 列表所属的搜索关键字。</li>
+<li>{Object} condition - 列表所属的搜索条件集合。属性中可以包含或不包含keyword字段，如果不包含， <em>建议(RECOMMMANDED)</em> 在解析的时候附加搜索关键字keyword条件。 </li>
+</ul>
+<h4 id="数据场景：数据页"><a href="#数据场景：数据页" class="headerlink" title="数据场景：数据页"></a>数据场景：数据页</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"page"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"pageSize"</span>: <span class="number">30</span>,</div><div class="line">    <span class="attr">"keyword"</span>: <span class="string">""</span>,</div><div class="line">    <span class="attr">"data"</span>: [</div><div class="line">        &#123;</div><div class="line">            <span class="attr">"id"</span>: <span class="number">250</span>,</div><div class="line">            <span class="attr">"name"</span>: <span class="string">"erik"</span>,</div><div class="line">            <span class="attr">"sex"</span>: <span class="number">1</span>,</div><div class="line">            <span class="attr">"age"</span>: <span class="number">18</span></div><div class="line">        &#125;,</div><div class="line">        &#123;</div><div class="line">            <span class="attr">"id"</span>: <span class="number">251</span>,</div><div class="line">            <span class="attr">"name"</span>: <span class="string">"欧阳先伟"</span>,</div><div class="line">            <span class="attr">"sex"</span>: <span class="number">1</span>,</div><div class="line">            <span class="attr">"age"</span>: <span class="number">28</span></div><div class="line">        &#125;</div><div class="line">    ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="键-值对象"><a href="#键-值对象" class="headerlink" title="键/值对象"></a>键/值对象</h3><p>对于在一个JSON Object中表示键/值：</p>
+<ul>
+<li>键的属性名 <em>必须(MUST)</em> 为name， <em>杜绝(MUST NOT)</em> 使用key或k</li>
+<li>值的属性名 <em>必须(MUST)</em> 为value， <em>杜绝(MUST NOT)</em> 使用v。</li>
+</ul>
+<h4 id="数据场景：键-值对象"><a href="#数据场景：键-值对象" class="headerlink" title="数据场景：键/值对象"></a>数据场景：键/值对象</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"name"</span>: <span class="string">"BMW"</span>,</div><div class="line">    <span class="attr">"value"</span>: <span class="number">1</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="键-值有序集合"><a href="#键-值有序集合" class="headerlink" title="键/值有序集合"></a>键/值有序集合</h3><p>键/值有序集合表示对事务或逻辑类型的抽象与分类。常见的应用场景有单选复选框集合，下拉菜单等。</p>
+<p>标准的键/值有序集合是一个JSON Array，集合中的每一项是一个JSON Object。项 <em>必须(MUST)</em> 包含name和value属性。 <em>可以(MAY)</em> 通过其他的属性修饰每一项的特殊信息，如selected。</p>
+<h4 id="数据场景：键-值有序集合"><a href="#数据场景：键-值有序集合" class="headerlink" title="数据场景：键/值有序集合"></a>数据场景：键/值有序集合</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">    &#123;</div><div class="line">        <span class="attr">"name"</span>: <span class="string">"BMW"</span>,</div><div class="line">        <span class="attr">"value"</span>: <span class="number">1</span></div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">        <span class="attr">"name"</span>: <span class="string">"Benz"</span>,</div><div class="line">        <span class="attr">"value"</span>: <span class="number">2</span>,</div><div class="line">        <span class="attr">"selected"</span>: <span class="literal">true</span></div><div class="line">    &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
+<h3 id="树"><a href="#树" class="headerlink" title="树"></a>树</h3><p>树形数据用于表示层叠的数据结构。树型数据 <em>必须(MUST)</em> 是一个JSON Object，代表树型数据的根节点。下面是标准定义的可选节点列表，不在列表中的属性 <em>可以(SHOULD)</em> 自行扩展。</p>
+<h3 id="树型数据结构的可选节点属性"><a href="#树型数据结构的可选节点属性" class="headerlink" title="树型数据结构的可选节点属性"></a>树型数据结构的可选节点属性</h3><ul>
+<li>{Number|String} id - 节点的唯一标识。</li>
+<li>{String} text - 名称或用于显示的字符串。</li>
+<li>{Array} children - 子节点列表。</li>
+</ul>
+<h4 id="数据场景：树型数据"><a href="#数据场景：树型数据" class="headerlink" title="数据场景：树型数据"></a>数据场景：树型数据</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"id"</span>: <span class="number">1</span>,</div><div class="line">    <span class="attr">"text"</span>: <span class="string">"中国"</span>,</div><div class="line">    <span class="attr">"children"</span>: [</div><div class="line">        &#123;</div><div class="line">            <span class="attr">"id"</span>: <span class="number">10</span>,</div><div class="line">            <span class="attr">"text"</span>: <span class="string">"北京"</span>,</div><div class="line">            <span class="attr">"children"</span>: [</div><div class="line">                &#123;</div><div class="line">                    <span class="attr">"id"</span>: <span class="number">100</span>,</div><div class="line">                    <span class="attr">"text"</span>: <span class="string">"东城区"</span></div><div class="line">                &#125;,</div><div class="line">                &#123;</div><div class="line">                    <span class="attr">"id"</span>: <span class="number">101</span>,</div><div class="line">                    <span class="attr">"text"</span>: <span class="string">"西城区"</span></div><div class="line">                &#125;,</div><div class="line">                &#123;</div><div class="line">                    <span class="attr">"id"</span>: <span class="number">102</span>,</div><div class="line">                    <span class="attr">"text"</span>: <span class="string">"海淀区"</span></div><div class="line">                &#125;</div><div class="line">                ......</div><div class="line">            ]</div><div class="line">        &#125;,</div><div class="line">        &#123;</div><div class="line">            <span class="attr">"id"</span>: <span class="number">31</span>,</div><div class="line">            <span class="attr">"text"</span>: <span class="string">"海南"</span>,</div><div class="line">            <span class="attr">"children"</span>: [</div><div class="line">                &#123;</div><div class="line">                    <span class="attr">"id"</span>: <span class="number">600</span>,</div><div class="line">                    <span class="attr">"text"</span>: <span class="string">"海口"</span></div><div class="line">                &#125;,</div><div class="line">                &#123;</div><div class="line">                    <span class="attr">"id"</span>: <span class="number">601</span>,</div><div class="line">                    <span class="attr">"text"</span>: <span class="string">"三亚"</span></div><div class="line">                &#125;,</div><div class="line">                &#123;</div><div class="line">                    <span class="attr">"id"</span>: <span class="number">602</span>,</div><div class="line">                    <span class="attr">"text"</span>: <span class="string">"五指山"</span></div><div class="line">                &#125;</div><div class="line">                ......</div><div class="line">            ]</div><div class="line">        &#125;</div><div class="line">        ......</div><div class="line">    ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><ul>
+<li>[RFC 2119] “Key words for use in RFCs to Indicate Requirement Levels”</li>
+<li>[RFC 4627] “The application/json Media Type for JavaScript Object Notation (JSON)”</li>
+<li>[RFC 2616] “Hypertext Transfer Protocol”</li>
+<li>[RFC 3339] “Date and Time on the Internet: Timestamps”</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+    
+    
+        <div>
+            <div>
+    
+
+        <blockquote class="blockquote-center">优秀的人，不是不合群，而是他们合群的人里面没有你</blockquote>
+        <div style="text-align:center;font-family: 'Lato', 'PingFang SC', 'Microsoft YaHei', sans-serif;color: #555;font-size:14px;">-----------本文结束<i class="fa fa-map-pin"></i>感谢您的阅读----------</div>
+    
+</div>
+        </div>
+    
+   
+    
+        <div>
+            
+<div class="my_post_copyright">
+  <!-- JS库 sweetalert 可修改路径 -->
+  <p><span>本文标题:</span><a href="/2017/08/23/JS书写规范/e-json/">E-JSON数据传输标准</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 Chelsia 的个人博客">Chelsia</a></p>
+  <p><span>发布时间:</span>2017年08月23日 - 22:08</p>
+  <p><span>最后更新:</span>2017年08月27日 - 10:08</p>
+  <p><span>原始链接:</span><a href="/2017/08/23/JS书写规范/e-json/" title="E-JSON数据传输标准">https://www.hqxdb.com/2017/08/23/JS书写规范/e-json/</a>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+
+
+        </div>
+    
+  
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>您的支持是我最大的动力︿(￣︶￣)︿</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span style="border-radius:50%; line-height:50px; width:50px;height:50px;" >赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="Chelsia WeChat Pay"/>
+        <p>WeChat Pay(微信)</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="Chelsia Alipay"/>
+        <p>Alipay(支付宝)</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/E-JSON/" rel="tag"><i class="fa fa-tag"></i> E-JSON</a>
+          
+            <a href="/tags/E-JSON编码规范/" rel="tag"><i class="fa fa-tag"></i> E-JSON编码规范</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/23/JS书写规范/directory/" rel="next" title="项目目录结构规范">
+                <i class="fa fa-chevron-left"></i> 项目目录结构规范
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/23/JS书写规范/css-style-guide/" rel="prev" title="CSS编码规范">
+                CSS编码规范 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMDI4My82ODM4"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/logo.png"
+               alt="Chelsia" />
+          <p class="site-author-name" itemprop="name">Chelsia</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/nodego" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://hqxdb.com/" target="_blank" title="weibo">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#编撰"><span class="nav-number">1.1.</span> <span class="nav-text">编撰</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#评审"><span class="nav-number">1.2.</span> <span class="nav-text">评审</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#要求"><span class="nav-number">1.3.</span> <span class="nav-text">要求</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSON数据类型"><span class="nav-number">2.</span> <span class="nav-text">JSON数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本数据类型"><span class="nav-number">2.1.</span> <span class="nav-text">基本数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复合数据类型"><span class="nav-number">2.2.</span> <span class="nav-text">复合数据类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#http响应头"><span class="nav-number">3.</span> <span class="nav-text">http响应头</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#status"><span class="nav-number">3.1.</span> <span class="nav-text">status</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Content-Type"><span class="nav-number">3.2.</span> <span class="nav-text">Content-Type</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Context-Type示例"><span class="nav-number">3.2.1.</span> <span class="nav-text">Context-Type示例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据字段"><span class="nav-number">4.</span> <span class="nav-text">数据字段</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#status-1"><span class="nav-number">4.1.</span> <span class="nav-text">status</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一个成功请求的status字段"><span class="nav-number">4.1.1.</span> <span class="nav-text">一个成功请求的status字段</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#statusInfo"><span class="nav-number">4.2.</span> <span class="nav-text">statusInfo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#client端参数错误的statusInfo"><span class="nav-number">4.2.1.</span> <span class="nav-text">client端参数错误的statusInfo</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#data"><span class="nav-number">4.3.</span> <span class="nav-text">data</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一个查询姓名请求的返回数据"><span class="nav-number">4.3.1.</span> <span class="nav-text">一个查询姓名请求的返回数据</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据场景"><span class="nav-number">5.</span> <span class="nav-text">数据场景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#日期类型"><span class="nav-number">5.1.</span> <span class="nav-text">日期类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据场景：日期"><span class="nav-number">5.1.1.</span> <span class="nav-text">数据场景：日期</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#记录"><span class="nav-number">5.2.</span> <span class="nav-text">记录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据场景：记录"><span class="nav-number">5.2.1.</span> <span class="nav-text">数据场景：记录</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二维表"><span class="nav-number">5.3.</span> <span class="nav-text">二维表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据场景：标准二维表"><span class="nav-number">5.3.1.</span> <span class="nav-text">数据场景：标准二维表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据场景：变通二维表"><span class="nav-number">5.3.2.</span> <span class="nav-text">数据场景：变通二维表</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据页"><span class="nav-number">5.4.</span> <span class="nav-text">数据页</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据页可选属性"><span class="nav-number">5.5.</span> <span class="nav-text">数据页可选属性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据场景：数据页"><span class="nav-number">5.5.1.</span> <span class="nav-text">数据场景：数据页</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#键-值对象"><span class="nav-number">5.6.</span> <span class="nav-text">键/值对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据场景：键-值对象"><span class="nav-number">5.6.1.</span> <span class="nav-text">数据场景：键/值对象</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#键-值有序集合"><span class="nav-number">5.7.</span> <span class="nav-text">键/值有序集合</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据场景：键-值有序集合"><span class="nav-number">5.7.1.</span> <span class="nav-text">数据场景：键/值有序集合</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#树"><span class="nav-number">5.8.</span> <span class="nav-text">树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#树型数据结构的可选节点属性"><span class="nav-number">5.9.</span> <span class="nav-text">树型数据结构的可选节点属性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据场景：树型数据"><span class="nav-number">5.9.1.</span> <span class="nav-text">数据场景：树型数据</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用"><span class="nav-number">6.</span> <span class="nav-text">引用</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright" >
+    Copyright
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+        <a class="theme-link" style="font-weight: bold" href="http://www.hqxdb.com">
+                HQXDB
+        </a>
+  </span>
+  <span class="author" itemprop="copyrightHolder">          All Rights Reserved</span>
+</div>
+
+    <div class="copyright" >
+        <div class="powered-by">
+            <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+                您是本站第:<span id="busuanzi_value_site_uv"></span>小伙伴
+            </span>
+            </div>
+            &nbsp; &nbsp;
+        <div class="theme-info">
+            <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+            <span id="busuanzi_container_site_pv">
+                访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+        </div> 
+    </div>  
+
+
+
+
+<div class="copyright" >
+    <div class="theme-info">
+        <div class="powered-by"></div>
+        <span class="post-count">全站共38.2k字</span>
+    </div>
+    <div class="theme-info">
+        <p >Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
+    </div>
+</div>
+ 
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.2"></script>
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("O2hmtK2mQpfdBmGoA76EMBhl-gzGzoHsz", "lnKEwduB3MIqDtmxVdLk1EyY");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

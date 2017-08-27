@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>https://www.hqxdb.com/2017/08/17/article-title/</loc>
+    <lastmod>2017-08-27T02:52:22.828Z</lastmod>
+    <data>
+        <display>
+        <title>hexo+githubpage构建https网站(一)</title>
+        <pubTime>2017-08-17T14:35:45.000Z</pubTime>
+        
+        <tag>github</tag>
+         
+        <tag>hexo</tag>
+         
+        <tag>node</tag>
+         
+        <tag>next</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.hqxdb.com/2017/08/23/JS%E4%B9%A6%E5%86%99%E8%A7%84%E8%8C%83/react-style-guide/</loc>
+    <lastmod>2017-08-27T02:52:14.541Z</lastmod>
+    <data>
+        <display>
+        <title>React规范</title>
+        <pubTime>2017-08-23T14:06:46.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+        <tag>react</tag>
+         
+        <tag>jsx</tag>
+         
+        <tag>html</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="https://www.hqxdb.com/categories/javascript/"/>
+          
+             
+              <breadCrumb title="规范" url="https://www.hqxdb.com/categories/javascript/%E8%A7%84%E8%8C%83/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.hqxdb.com/2017/08/23/JS%E4%B9%A6%E5%86%99%E8%A7%84%E8%8C%83/package/</loc>
+    <lastmod>2017-08-27T02:52:08.942Z</lastmod>
+    <data>
+        <display>
+        <title>包结构规范 (1.1)</title>
+        <pubTime>2017-08-23T14:06:46.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+        <tag>规范</tag>
+         
+        <tag>package</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="https://www.hqxdb.com/categories/javascript/"/>
+          
+             
+              <breadCrumb title="规范" url="https://www.hqxdb.com/categories/javascript/%E8%A7%84%E8%8C%83/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.hqxdb.com/2017/08/23/JS%E4%B9%A6%E5%86%99%E8%A7%84%E8%8C%83/module/</loc>
+    <lastmod>2017-08-27T02:52:05.193Z</lastmod>
+    <data>
+        <display>
+        <title>模块和加载器规范</title>
+        <pubTime>2017-08-23T14:06:46.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+        <tag>规范</tag>
+         
+        <tag>AMD</tag>
+         
+        <tag>CMD</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="https://www.hqxdb.com/categories/javascript/"/>
+          
+             
+              <breadCrumb title="规范" url="https://www.hqxdb.com/categories/javascript/%E8%A7%84%E8%8C%83/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.hqxdb.com/2017/08/23/JS%E4%B9%A6%E5%86%99%E8%A7%84%E8%8C%83/less-code-style/</loc>
+    <lastmod>2017-08-27T02:52:00.873Z</lastmod>
+    <data>
+        <display>
+        <title>Less 编码规范 (1.1)</title>
+        <pubTime>2017-08-23T14:06:46.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+        <tag>规范</tag>
+         
+        <tag>Less</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="https://www.hqxdb.com/categories/javascript/"/>
+          
+             
+              <breadCrumb title="规范" url="https://www.hqxdb.com/categories/javascript/%E8%A7%84%E8%8C%83/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.hqxdb.com/2017/08/23/JS%E4%B9%A6%E5%86%99%E8%A7%84%E8%8C%83/javascript-style-guide/</loc>
+    <lastmod>2017-08-27T02:51:53.875Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript编码规范</title>
+        <pubTime>2017-08-23T14:06:46.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+        <tag>规范</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="https://www.hqxdb.com/categories/javascript/"/>
+          
+             
+              <breadCrumb title="规范" url="https://www.hqxdb.com/categories/javascript/%E8%A7%84%E8%8C%83/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.hqxdb.com/2017/08/23/JS%E4%B9%A6%E5%86%99%E8%A7%84%E8%8C%83/html-style-guide/</loc>
+    <lastmod>2017-08-27T02:51:49.218Z</lastmod>
+    <data>
+        <display>
+        <title>HTML编码规范</title>
+        <pubTime>2017-08-23T14:06:46.000Z</pubTime>
+        
+        <tag>HTML</tag>
+         
+        <tag>HTML编码规范</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="https://www.hqxdb.com/categories/javascript/"/>
+          
+             
+              <breadCrumb title="规范" url="https://www.hqxdb.com/categories/javascript/%E8%A7%84%E8%8C%83/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.hqxdb.com/2017/08/23/JS%E4%B9%A6%E5%86%99%E8%A7%84%E8%8C%83/es-next-style-guide/</loc>
+    <lastmod>2017-08-27T02:51:43.716Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript 编码规范 - ESNext 补充篇（草案）</title>
+        <pubTime>2017-08-23T14:06:46.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+        <tag>编码规范</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="https://www.hqxdb.com/categories/javascript/"/>
+          
+             
+              <breadCrumb title="规范" url="https://www.hqxdb.com/categories/javascript/%E8%A7%84%E8%8C%83/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.hqxdb.com/2017/08/23/JS%E4%B9%A6%E5%86%99%E8%A7%84%E8%8C%83/e-json/</loc>
+    <lastmod>2017-08-27T02:51:38.489Z</lastmod>
+    <data>
+        <display>
+        <title>E-JSON数据传输标准</title>
+        <pubTime>2017-08-23T14:06:46.000Z</pubTime>
+        
+        <tag>E-JSON</tag>
+         
+        <tag>E-JSON编码规范</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="https://www.hqxdb.com/categories/javascript/"/>
+          
+             
+              <breadCrumb title="规范" url="https://www.hqxdb.com/categories/javascript/%E8%A7%84%E8%8C%83/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.hqxdb.com/2017/08/23/JS%E4%B9%A6%E5%86%99%E8%A7%84%E8%8C%83/directory/</loc>
+    <lastmod>2017-08-27T02:51:33.925Z</lastmod>
+    <data>
+        <display>
+        <title>项目目录结构规范</title>
+        <pubTime>2017-08-23T14:06:46.000Z</pubTime>
+        
+        <tag>项目目录结构规范</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="https://www.hqxdb.com/categories/javascript/"/>
+          
+             
+              <breadCrumb title="规范" url="https://www.hqxdb.com/categories/javascript/%E8%A7%84%E8%8C%83/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.hqxdb.com/2017/08/23/JS%E4%B9%A6%E5%86%99%E8%A7%84%E8%8C%83/css-style-guide/</loc>
+    <lastmod>2017-08-27T02:51:29.238Z</lastmod>
+    <data>
+        <display>
+        <title>CSS编码规范</title>
+        <pubTime>2017-08-23T14:06:46.000Z</pubTime>
+        
+        <tag>CSS编码规范</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="https://www.hqxdb.com/categories/javascript/"/>
+          
+             
+              <breadCrumb title="规范" url="https://www.hqxdb.com/categories/javascript/%E8%A7%84%E8%8C%83/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.hqxdb.com/2017/08/23/JS%E4%B9%A6%E5%86%99%E8%A7%84%E8%8C%83/README/</loc>
+    <lastmod>2017-08-27T02:21:01.885Z</lastmod>
+    <data>
+        <display>
+        <title>javascript书写规范目录</title>
+        <pubTime>2017-08-23T14:06:46.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+        <tag>规范</tag>
+         
+        <tag>目录</tag>
+         
+         
+           
+             
+              <breadCrumb title="目录" url="https://www.hqxdb.com/categories/%E7%9B%AE%E5%BD%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+    
+    
+</urlset>
