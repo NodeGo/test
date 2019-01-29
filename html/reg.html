@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>用户注册</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/reg.css">
+    <!--[if lt IE 9]>
+    <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <style>
+        #reg{
+            background-image: url("../res/reg/reg.png");
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <img src="../res/common/LOGO-1.png" alt="">
+            <ul>
+                <li>首页</li>
+                <li>基础服务</li>
+                <li>金融服务</li>
+                <li>进口商铺</li>
+                <li>关于我们</li>
+                <li>咨询中心</li>
+                <li>
+                    <img src="../res/common/Mine-pic.png" alt="">
+                    <div id="login-reg">
+                        <button type="button"><img src="../res/index/login-red.png" alt="">立即登录</button>
+                        <button type="button"><img src="../res/index/reg-icon-red.png" alt="">免费注册</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="nav" id="reg">
+        <div>
+            <div id="div-1"></div>
+            <div id="div-2"></div>
+            <label>用户注册</label>
+            <div id="div-3"></div>
+        </div>
+    </div>
+
+    <section class="reg">
+        <ul>
+            <li><label for="">* 用户名</label><input type="text" placeholder="选中填写时效果"> <span class="sp-sel">用户名不能为空</span></li>
+            <li><label for="">* 登录密码</label><input type="password"> <img src="../res/reg/reg-right.png" alt=""></li>
+            <li><label for="">* 确认密码</label><input type="password"></li>
+            <li><label for="">* 企业名称</label><input type="text"> <span>请输入企业名称</span></li>
+            <li>
+                <label for="">* 公司地址</label>
+                <select name="" id="" style="margin-left: 16px">
+                    <option value="国别">国别</option>
+                </select>
+                <select name="" id="">
+                    <option value="省">省</option>
+                </select>
+                <select name="" id="">
+                    <option value="市">市</option>
+                </select>
+                <span>请输入公司地址</span>
+            </li>
+            <li>
+                <select name="" id="" style="margin-left: 100px">
+                    <option value="区（县）">区（县）</option>
+                </select>
+                <input type="text" style="width: 190px;margin-left: 5px">
+            </li>
+            <li><label for="">* 邮编</label><input type="text"></li>
+            <li><label for="">* 注册地</label><input type="text"><span>请输入注册地</span></li>
+            <li>
+                <label for="">* 公司性质</label>
+                <input type="radio" value="" id="cam-1" name="cam" style="margin-left: 15px"><label for="cam-1" style="margin-left:-25px">制造商</label>
+                <input type="radio" name="cam" id="cam-2" value=""><label for="cam-2" style="margin-left:-25px">流通商</label>
+            </li>
+            <li>
+                <label for="">* 股本性质</label>
+                <input type="radio" name="gb" id="gb-1" style="margin-left: 15px"><label for="gb-1" style="width: auto;margin-left: 5px">个人无限独资</label>
+                <input type="radio" name="gb" id="gb-2"><label for="gb-2" style="margin-left:-10px">有限责任</label>
+                <input type="radio" name="gb" id="gb-3"><label for="gb-3" style="margin-left:-10px">股份有限</label>
+            </li>
+            <li>
+                <label for="">* 资本性质</label>
+                <input type="radio" name="zb" id="zb-1" style="margin-left: 15px" value="内资企业"><label for="zb-1" style="margin-left:-10px">内资企业</label>
+                <input type="radio" name="zb" id="zb-2"><label for="zb-2" style="margin-left:-10px">外资企业</label>
+                <input type="radio" name="zb" id="zb-3"><label for="zb-3" style="margin-left:-10px">中外合资</label>
+            </li>
+            <li><label for="">* 联系人</label><input type="text"></li>
+            <li><label for="">* 联系电话</label><input type="text" style="width: 70px;color: #818585" value="+86"><input type="text"></li>
+            <li><label for="">* 电子邮箱</label><input type="text"> <span>请输入电子邮箱</span></li>
+            <li><label for="">* 传真号码</label><input type="text"></li>
+            <li><label for="">* 验证码</label><input type="text"><img src="../res/reg/yanz.png" alt=""></li>
+        </ul>
+        <input type="checkbox"><span style="margin-left: 10px">我已认真阅读并同意</span><a href="">服务条款</a><br>
+        <button type="button">注册</button>
+        <img src="../res/reg/reg-bg1.png" alt="">
+        <img class="s" src="../res/reg/reg-bg2.png" alt="">
+    </section>
+
+    <footer>
+        <div class="top">
+            <!--关于我们-->
+            <ul style="margin-left: 0">
+                <li>关于我们</li>
+                <li>企业简介</li>
+                <li>平台价值</li>
+                <li>招贤纳士</li>
+                <li>合作单位</li>
+            </ul>
+            <!--服务-->
+            <ul>
+                <li>服务</li>
+                <li>基础服务</li>
+                <li>金融服务</li>
+                <li>增值业务</li>
+            </ul>
+            <!--平台咨询-->
+            <ul>
+                <li>平台资讯</li>
+                <li>平台资讯</li>
+                <li>行业新闻</li>
+            </ul>
+            <!--常用工具-->
+            <ul>
+                <li>常用工具</li>
+                <li>汇率查询</li>
+                <li>税率查询</li>
+                <li>各国货币查询</li>
+                <li>英文缩写查询</li>
+                <li>在线翻译</li>
+                <li>快递查询</li>
+                <li>全球地图定位</li>
+                <li>度量制度</li>
+                <li>HS编码查询</li>
+            </ul>
+            <!--联系我们-->
+            <ul id="contact">
+                <li>联系我们</li>
+                <li>7x24小时热线</li>
+                <li>400-117-2277</li>
+                <li>公司传真：0086-576-89029758</li>
+                <li>公司地址：浙江省温州市隔岸路60号</li>
+            </ul>
+        </div>
+
+        <div class="bottom">
+            <span>Copyright 2016浙江省国际贸易集团有限公司（温州） All rights Reserved.</span><br>
+            <span>ICP备案号：浙ICP备15010359号</span>
+        </div>
+    </footer>
+</body>
+<script src="../js/jquery-3.1.1.js"></script>
+<script src="../js/common.js"></script>
+</html>
