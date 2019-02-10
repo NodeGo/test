@@ -1,0 +1,510 @@
+header{
+    /*position: fixed;top: 0;*/
+}
+header .header>ul>li{
+    color: #2A363A;
+}
+header .header>ul>li.head-sel{
+    /*color: #DA241C;*/
+    font-weight: bold;
+}
+/*=======================轮播设置=======================*/
+
+
+/*===================轮播下方的图片设置=================*/
+div.link{
+    width: 100%;height: 150px;
+    overflow: hidden;
+    background: #FAFBFC;
+}
+div.link>div{
+    width: 1200px;
+    height: 150px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding-top: 20px;
+}
+div.link ul{
+    display: inline-block;
+
+}
+div.link ul>li{
+    width: 238px;
+    height: 110px;
+    float: left;
+    border-right: 2px solid rgba(230,230,230,0.50);
+}
+div.link ul>li:last-child{
+    border: none;
+}
+div.link ul>li>img{
+    display: inline-block;
+    float: left;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+div.link ul>li>label,
+div.link ul>li>p{
+    float: left;
+    margin-left: 20px;
+}
+div.link ul>li>label{
+    display: inline-block;
+    width: 98px;
+    font-size: 18px;
+    color: #2A363A;
+    text-align: left;
+    font-weight: bold;
+    margin-top: 10px;margin-left: 20px;
+}
+div.link ul>li>p{
+    width: 90px;
+    font-size: 12px;
+    line-height: 16px;
+    color: #818585;
+    margin-top: 10px;
+    margin-left: 20px;
+    text-align: justify;
+}
+
+.sec-tit{
+    width: 400px;
+    height: auto;
+    margin: 50px auto 50px;
+}
+.sec-tit>span{
+    width: 400px;
+    display: inline-block;
+    text-align: center;
+}
+.sec-tit>span:first-child{
+    font-size: 24px;
+    color: #2A363A;
+    font-weight: bold;
+}
+.sec-tit>div{
+    width: 400px;height: 1px;
+    margin-top: 10px;margin-bottom: 10px;
+    background-image: linear-gradient(-90deg, rgba(255,131,123,0.00) 0%, #DA241C 50%, rgba(255,131,123,0.00) 100%);
+}
+.sec-tit>span:last-child{
+    font-size: 16px;
+    color: #BFBDB7;
+}
+
+/*====================基础服务==================*/
+#basis>.sec-con{
+    width: 1200px;
+    height: auto;
+    margin: 0 auto;
+    overflow: hidden;
+    cursor: pointer;
+}
+#basis>.sec-con>ul{
+    width: 100%;
+    height: 223px;
+    display: inline-block;
+    overflow: hidden;
+}
+#basis>.sec-con>ul>li{
+    float: left;
+    width: 214px;height: 220px;
+    margin-left: 30px;
+    background: #FAFBFC;
+}
+#basis>.sec-con>ul>li:hover{
+    box-shadow: 0 3px 6px 0 rgba(42,54,58,0.30);
+}
+#basis>.sec-con>ul>li:first-child{
+    margin-left: 3px;
+}
+#basis>.sec-con>ul>li>img{
+    display: inline-block;
+    margin-left: 70px;margin-top: 40px;
+}
+#basis>.sec-con>ul>li>label,
+#basis>.sec-con>ul>li>span{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    color: #2A363A;
+}
+#basis>.sec-con>ul>li>span{
+    margin-top: 28px;
+    font-size: 18px;
+}
+#basis>.sec-con>ul>li>label{
+    margin-top: 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/*=======================金融服务=====================*/
+#financial{
+    width: 100%;
+    height: 750px;
+    /*opacity: 0.8;*/
+    /*background: rgba(216,216,216,0.50);*/
+    background-image: url("../res/index/financial-bg.png");
+    margin-top: 70px;
+}
+#financial>.fin-sec{
+    width: 1200px;
+    margin: 0px auto;
+    /*overflow: hidden;*/
+}
+#financial .bd-img{
+    width: 160px;
+    height: 340px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    float: left;
+    margin-left: 13px;
+    cursor: pointer;
+    color: #2A363A;
+}
+#financial .bd-img>.class-1{
+    width: 80px;
+    height: 80px;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    border-radius:50%;
+    background: rgba(128,5,0,0.1);
+    /*position: absolute;*/
+    /*top: -40px;*/
+    /*left:40px;*/
+    padding-left: 10px;padding-top: 10px;
+    margin-left: 40px;margin-top: -40px;
+    position: relative;
+    z-index: 2;
+}
+#financial .bd-img>.class-1>.class-2{
+    width: 60px;
+    height: 60px;
+    background: #8D8D8D;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    border-radius:50%;
+    /*margin-left: 10px;margin-top: 10px;*/
+    padding-left: 10px;padding-top: 10px;
+}
+
+#financial .bd-img>span{
+    font-size: 20px;
+    font-weight: bold;
+    /*color: #2A363A;*/
+    width: 100%;
+    display: inline-block;
+    margin-top: 40px;
+    text-align: center;
+}
+#financial .bd-img>label{
+    /*color: #2A363A;*/
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+#financial .bd-img>p{
+    width: 130px;
+    display: inline-block;
+    margin-top: 20px;
+    text-align: justify;
+    font-size: 14px;
+    line-height: 18px;
+    /*color: #2A363A;*/
+    margin-left: 15px;
+}
+#financial .bd-img>img{
+    display: inline-block;
+    margin-left: 70px;
+    margin-top: 25px;
+}
+#financial .bd-img:hover{
+    color: #FFFFFF;
+    background: #59697D;
+    box-shadow: 0 2px 4px 0 rgba(14,37,66,0.64);
+    border-radius: 8px;
+}
+
+#financial .bd-img:nth-child(1){
+    margin-top: 80px;
+}
+#financial .bd-img:nth-child(2){
+    margin-top: 140px;
+}
+#financial .bd-img:nth-child(3){
+    margin-top: 30px;
+}
+#financial .bd-img:nth-child(4){
+    margin-top: 190px;
+}
+#financial .bd-img:nth-child(5){
+    margin-top: 90px;
+}
+#financial .bd-img:nth-child(6){
+    margin-top: 140px;
+}
+#financial .bd-img:nth-child(7){
+    margin-top: 50px;
+}
+
+/*=======================服务流程=====================*/
+#ser-pro{
+    width: 1200px;
+    height: auto;
+    overflow: hidden;
+}
+#ser-pro>ul{
+    width: 100%;
+    display: inline-block;
+    overflow: hidden;
+    margin-top: 40px;
+}
+#ser-pro>ul>li{
+    float: left;
+    margin-left: 60px;
+    height: auto;
+}
+#ser-pro>ul>li:nth-child(2n+1){
+    width: 78px;
+}
+#ser-pro>ul>li:nth-child(2n){
+    width: 20px;
+    position: relative;
+    top: 30px;
+}
+#ser-pro>ul>li:first-child{
+    margin-left: 0;
+}
+#ser-pro>ul>li>img{
+    display: inline-block;
+
+}
+#ser-pro>ul>li>span{
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    font-size: 18px;
+    color: #2A363A;
+    margin-top: 35px;
+    cursor: default;
+}
+
+/*新闻法规*/
+#news{
+    width: 100%;
+    min-height: 550px;
+    overflow: hidden;
+    margin: 100px auto 0;
+    background-image: url("../res/index/news-pol-bg.png");
+    background-size: 100% 550px;
+}
+#news>.news-con{
+    width: 1200px;height: 550px;
+    margin: 0px auto;
+    overflow: hidden;
+}
+#news>.news-con>div{
+    width: 580px;
+    height: 376px;
+    opacity: 0.8;
+    background: #FEFEFE;
+    overflow: hidden;
+    float: left;
+    margin-left: 40px;
+    margin-top: 87px;
+    padding-left: 30px;padding-top: 30px;
+}
+#news>.news-con>div:first-child{ margin-left: 0}
+#news>.news-con>div>label{
+    font-size: 26px;
+    color: #2A363A;
+    line-height: 24px;
+    font-weight: bold;
+}
+#news>.news-con>div>span{
+    color: #BFBDB7;
+    margin-left: 5px;
+    cursor: default;
+}
+#news>.news-con>div>img{
+    margin-left: 5px;
+    position: relative;
+    top:2px;
+}
+#news>.news-con>div button{
+    width: 44px;
+    line-height: 20px;
+    border: 1px solid #2A363A;
+    border-radius: 6px;
+    font-size: 12px;
+    color: #2A363A;
+    margin-left: 200px;
+}
+#news>.news-con>div button:hover{
+    color: #DA241C;
+    border: 1px solid #DA241C;
+    font-weight: bold;
+}
+#news>.news-con>div ul li{
+    width: auto;
+    height: auto;line-height: 30px;
+    padding-right: 30px;
+    /*display: inline-block;*/
+    margin-top: 26px;
+    cursor: pointer;
+}
+
+#news>.news-con>div ul li>label{
+    float: left;
+    cursor: pointer;
+}
+#news>.news-con>div ul li>span{
+    float: right;
+}
+#news>.news-con>div ul li:first-child{
+    height: 90px;
+    margin-top: 30px;
+}
+#news>.news-con>div ul li:first-child>img{
+    display: inline-block;
+    float: left;
+}
+#news>.news-con>div ul li:first-child>div{
+    width: 370px;height: 80px;
+    float: left;
+    overflow: hidden;
+    margin-left: 30px;
+}
+#news>.news-con>div ul li:first-child>div>label{
+    font-weight: bold;
+}
+#news>.news-con>div ul li:first-child>div>p{
+    width: 280px;
+    color: #969696;
+    display: inline-block;
+    font-size: 12px;line-height: 16px;
+    /*color: #646464;*/
+    margin-top: 10px;
+}
+#news>.news-con>div ul li:first-child>div>span{
+    font-size: 18px;
+    font-weight: bold;
+    color: red;
+    display: inline-block;
+    float: right;
+    margin-top: 10px;
+}
+#news>.news-con>div ul li:hover{ color: red}
+
+/*=============================常用工具==========================*/
+#tool{
+    width: 1200px;
+    height: auto;
+    overflow: hidden;
+}
+#tool>ul{
+    width: 100%;
+    height: auto;
+    display: inline-block;
+    overflow: hidden;
+    margin-top: 20px;
+}
+#tool>ul>li{
+    width: 232px;
+    height: 130px;
+    float: left;
+    margin-left: 10px;margin-top: 10px;
+    border: 1px solid #BFBDB7;
+    border-radius: 2px;
+}
+
+#tool>ul>li:nth-child(5n+1){
+    margin-left: 0;
+}
+#tool>ul>li>img{
+    margin-left: 30px;
+    margin-top: 40px;
+    display: inline-block;
+    float: left;
+}
+#tool>ul>li>label{
+    display: inline-block;
+    width: 130px;
+    line-height: 24px;
+    float: left;
+    /*color: #2A363A;*/
+    font-weight: bold;
+    margin-top: 40px;margin-left: 20px;
+}
+#tool>ul>li>span{
+    width: auto;
+    display: inline-block;
+    float: left;
+    font-size: 12px;
+    /*color: #818585;*/
+    margin-top: 10px;margin-left: 20px;
+}
+#tool>ul>li:hover{ cursor: pointer;color: #FFFFFF;}
+#tool>ul>li:first-child:hover{
+    background: #0C8BED;
+}
+#tool>ul>li:nth-child(2):hover{
+    background: #F3A03F;
+}
+#tool>ul>li:nth-child(3):hover{
+    background: #06CC87;
+}
+#tool>ul>li:nth-child(4):hover{
+    background: #EF5F52;
+}
+#tool>ul>li:nth-child(5):hover{
+    background: #51C14D;
+}
+#tool>ul>li:nth-child(6):hover{
+    background: #4800B5;
+}
+#tool>ul>li:nth-child(7):hover{
+    background: #676767;
+}
+#tool>ul>li:nth-child(8):hover{
+    background: #FFD648;
+}
+#tool>ul>li:nth-child(9):hover{
+    background: #8E725B;
+}
+#tool>ul>li:nth-child(10):hover{
+    background: #C7C7C7;
+}
+
+/*================================合作单位==========================*/
+#Co{
+    width: 100%;
+    overflow: hidden;
+}
+#Co>div:nth-child(2){
+    width: 1200px;
+    height: auto;
+    margin: 0px auto;
+}
+#Co ul{
+    display: inline-block;
+    width: 1200px;
+    height: 88px;
+}
+#Co ul>li{
+    line-height: 88px;
+    float: left;
+    margin-left: 97px;
+    cursor: pointer;
+}
+#Co ul>li>img{
+    position: relative;top: 18px;
+}
+#Co ul>li:first-child{
+    margin-left: 0;
+}
+#Co ul>li:first-child>img{
+    position: relative;top: 0;
+}

@@ -1,0 +1,122 @@
+section{
+    width: 1200px;
+    height: auto;
+    margin: 0px auto;
+    overflow: hidden;
+}
+section>.sec-pol{
+    width: 100%;
+    height: auto;
+    padding-bottom: 4px;
+    overflow: hidden;
+}
+section>.sec-pol>li{
+    width: 580px;
+    height: 220px;
+    margin-top: 40px;
+    float: left;
+    margin-left: 32px;
+    background: #FAFBFC;
+    padding: 35px 40px 35px 30px;
+}
+section>.sec-pol>li:hover{
+    background: #FFFFFF;
+    box-shadow: 0 4px 8px 0 rgba(42,54,58,0.30);
+}
+section>.sec-pol>li:nth-child(2n+1){
+    margin-left: 4px;
+}
+section>.sec-pol>li>img{
+    display: inline-block;
+    float: left;
+}
+section>.sec-pol>li>div{
+    width: 330px;
+    float: right;
+}
+section>.sec-pol>li>div>label{
+    font-size: 18px;
+    line-height: 18px;
+    color: #2A363A;
+    display: inline-block;
+    margin-top: 10px;
+}
+section>.sec-pol>li>div>span{
+    width: 100%;
+    display: inline-block;
+    font-size: 14px;
+    color: #646464;
+    margin-top: 10px;
+}
+section>.sec-pol>li>div>p{
+    width: 100%;
+    line-height: 20px;
+    max-height: 54px;
+    font-size: 14px;
+    color: #646464;
+    margin-top: 10px;
+}
+
+/*下方按钮*/
+section>.link-btn{
+    width: 460px;
+    height: 30px;
+    display: inline-block;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    overflow: hidden;
+    float: right;
+}
+section>.link-btn>li{
+    width: auto;
+    height: auto;
+    float: left;
+    margin-left: 10px;
+}
+section>.link-btn>li>button{
+    width: 30px;
+    height: 30px;line-height: 28px;
+    text-align: center;
+    border: 1px solid #E6E6E6;
+    border-radius: 2px;
+    font-size: 12px;
+}
+section>.link-btn>li:first-child>button{
+    width: 58px;
+    margin-left: 0;
+}
+section>.link-btn>li:nth-child(7)>button{
+    width: 58px;
+}
+section>.link-btn>li:nth-child(5)>button{
+    border: none;
+    cursor: text;
+}
+section>.link-btn>li:nth-child(8){
+    width: auto;
+    font-size: 12px;
+    margin-left: 10px;
+}
+section>.link-btn>li:nth-child(8)>input{
+    width: 30px;
+    height: 30px;line-height: 24px;
+    border: 1px solid #E6E6E6;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+    margin-right: 10px;
+}
+section>.link-btn>li:nth-child(9)>button{
+    width: 40px;
+    height: 20px;
+    line-height: 20px;
+    margin-top: 5px;
+}
+
+section>.link-btn .btn-sel{
+    background: #FFF9F9;
+    border: 1px solid #DA241C;
+    border-radius: 3px;
+    color: #DA241C;
+    font-weight: bold;
+}

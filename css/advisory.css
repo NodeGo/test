@@ -1,0 +1,232 @@
+section{
+    width: 1200px;
+    height: auto;
+    margin: 30px auto 0;
+}
+/*=====================热点问题=====================*/
+#hot{
+    background: #F4F5F7;
+    overflow: hidden;
+    padding-left: 30px;
+}
+/*标题通用*/
+section>label{
+    width: auto;
+    height: 28px;
+    display: inline-block;
+    font-size: 28px;
+    color: #2A363A;
+    line-break: 28px;
+    padding-left: 20px;
+    border-left: 4px solid red;
+    margin-top: 20px;
+}
+
+#hot>.sec-hot-nav{
+    width: auto;
+    height: 44px;
+    overflow: hidden;
+    display: inline-block;
+    margin-top: 20px;
+}
+#hot>.sec-hot-nav>li{
+    width: 150px;
+    height: 44px;line-height: 44px;
+    float: left;
+    margin-left: 20px;
+    background: #D8DADE;
+    border-radius: 2px 2px 0 0;
+    font-size: 18px;
+    text-align: center;
+}
+#hot>.sec-hot-nav>li:first-child{
+    margin-left: 0;
+}
+#hot>.sec-hot-nav>li.nav-sel{
+    line-height: 40px;
+    color: #DA241C;
+    border-top: 2px solid red;
+    background: #FFFFFF;
+    border-radius: 2px 2px 0 0;
+}
+#hot>.sec-hot-nav>li:hover{
+    line-height: 40px;
+    border-top: 2px solid red;
+    background: #FFFFFF;
+    cursor: pointer;
+}
+#hot>.sec-hot-con{
+    width: 1140px;
+    min-height: 150px;
+    background: #FFFFFF;
+    overflow: hidden;
+    margin-bottom: 38px;
+    margin-top: -2px;
+    padding-top: 10px;padding-left: 30px;
+}
+#hot>.sec-hot-con li{
+    min-width: 150px;
+    max-width: 160px;
+    float: left;
+    margin-left: 75px;
+    font-size: 14px;
+    color: #2A363A;
+    margin-top: 20px;
+}
+#hot>.sec-hot-con li:hover{
+    color: #DA241C;
+    cursor: pointer;
+    font-weight: bold;
+}
+#hot>.sec-hot-con li:nth-child(5n+1){
+    margin-left: 0;
+}
+/*========================问题搜索========================*/
+#pro{
+    height: auto;
+    padding-left: 30px;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+#pro>input{
+    width: 520px;
+    height: 44px;
+    line-height: 44px;
+    border: 2px solid #D8DADE;
+    font-size: 14px;
+    color: #969696;
+    padding-left: 15px;
+    margin-top: 10px;
+}
+#pro>input::-webkit-input-placeholder{
+    font-size: 14px;
+    color: #969696;
+}
+#pro>input:-ms-input-placeholder{
+    font-size: 14px;
+    color: #969696;
+}
+#pro>input::-moz-placeholder{
+    font-size: 14px;
+    color: #969696;
+}
+#pro>button{
+    width: 100px;
+    height: 44px;
+    line-height: 40px;
+    text-align: center;
+    background: #2A363A;
+    font-size: 18px;
+    color: #FFFFFF;
+    margin-left: 10px;
+    position: relative;top: 2px;
+}
+
+#pro>ul{
+    width: 1140px;
+    height: auto;
+    margin-top: 10px;
+}
+#pro>ul>li{
+    width: 1140px;
+    height: 150px;
+    border: 2px solid #D8DADE;
+    margin-top: 20px;
+    overflow: hidden;
+}
+#pro>ul>li>.left{
+    width: 100px;
+    height: 150px;line-height: 150px;
+    background: #D8DADE;
+    text-align: center;
+    float: left;
+}
+#pro>ul>li>.right{
+    width: 1036px;
+    height: 150px;
+    float: right;
+}
+#pro>ul>li>.right ul{
+    width: 100%;height: 100%;
+    padding-left: 30px;
+    padding-top: 14px;
+    overflow: hidden;
+}
+#pro>ul>li>.right ul>li{
+    width: 138px;
+    /*min-width: 120px;*/
+    /*max-width: 138px;*/
+    float: left;
+    margin-left: 72px;
+    font-size: 14px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+#pro>ul>li>.right ul>li:hover{
+    color: #DA241C;
+    font-weight: bold;
+}
+#pro>ul>li>.right ul>li:nth-child(5n+1){
+    margin-left: 0;
+}
+#pro>ul>li>.right ul>li:last-child{
+    color: #DA241C;
+    cursor: pointer;
+}
+/*============================常见问题=============================*/
+#trb{
+    /*padding-left: 30px;*/
+    margin-bottom: 40px;
+}
+#trb>.sec-tit{
+    margin-left: 30px;
+}
+#trb>.trb-con{
+    width: 100%;
+    padding-bottom: 4px;
+    overflow: hidden;
+}
+#trb>.trb-con>li{
+    float: left;
+    width: 380px;
+    height: 220px;
+    background: #FAFBFC;
+    border-radius: 2px;
+    margin-top: 30px;margin-left: 26px;
+    border-top: 4px solid #DA241C;
+    padding-left: 20px;padding-top: 25px;
+}
+#trb>.trb-con>li:hover{
+    background: #FFFFFF;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.30);
+    border-radius: 2px;
+}
+#trb>.trb-con>li>img{
+    position: relative;
+    top: 2px;
+}
+#trb>.trb-con>li label{
+    font-size: 18px;
+    color: #2A363A;
+    margin-left: 10px;
+    font-weight: bold;
+}
+#trb>.trb-con>li>div:nth-child(2){
+    margin-top: 20px;
+}
+#trb>.trb-con>li>div:nth-child(2)>img{
+    display: inline-block;
+    float: left;
+}
+#trb>.trb-con>li p{
+    width: 300px;
+    font-size: 14px;
+    color: #2A363A;
+    float: left;
+    margin-left: 10px;
+    line-height: 20px;
+    text-align: justify;
+}
+#trb>.trb-con>li:nth-child(3n+1){
+    margin-left: 4px;
+}

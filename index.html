@@ -1,151 +1,797 @@
-<!doctype html>
-<html lang="zh-cn">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<title>[!--pagetitle--] - [!--class.name--] - <?=$public_r[sitename]?></title>
-<meta name="description" content="[!--pagedes--]" />
-<meta name="keywords" content="[!--pagekey--]" />
-<link href="css/master.css" type="text/css" rel="stylesheet" />
-<link href="css/base.css" type="text/css" rel="stylesheet" />
-<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
-<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>浙江省国际贸易集团温州有限公司</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/default.css" media="screen">
+    <link rel="stylesheet" href="css/nivo-slider.css" media="screen">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
 
+    <style>
+        .slider-wrapper {
+             width: 100%;
+        }
+    </style>
 </head>
-
-
 <body>
-<div class="head clearfix yh">
-
-	<!--logo-->
-    <div class="logo block clearfix">
-    	<a href="/" class="fleft"><img src="images/logo.png"></a>
-        <div class="fright">
-        	<p class="tright"><a onclick="SetHome(window.location)" href="javascript:void(0)">设为首页</a> | <a onclick="AddFavorite(window.location,document.title)" href="javascript:void(0)">加入收藏</a></p>
-            <br>
-            <p class="f16 c_red">咨询电话：13023288071</p>
-        </div>
-    </div>
-    
-    <!--nav-->
-	<div class="nav clearfix">
-    	<ul class="block">
-        	<li><a href="">网站首页</a></li>
-            <li><a href="" class="L">关于我们</a></li>
-            <li><a href="" class="L">服务范围</a></li>
-            <li><a href="新闻列表页.html" class="L">新闻中心</a></li>
-            <li><a href="图片列表页.html" class="L">工程案例</a></li>
-            <li><a href="" class="L">联系我们</a></li>
-        </ul>
-    </div>
-    
-    <div class="focusBox">
-			<ul class="pic">
-					<li><a href="#" target="_blank"><img src="images/banner.jpg"/></a></li>
-					<li><a href="#" target="_blank"><img src="images/banner.jpg"/></a></li>
-					<li><a href="#" target="_blank"><img src="images/banner.jpg"/></a></li>
-					<li><a href="#" target="_blank"><img src="images/banner.jpg"/></a></li>
-			</ul>
-			<ul class="hd">
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-			</ul>
-	</div>
-
-
-</div>
-
-<div class="main clearfix ofHidden block yh">
-
-	<!--左侧-->
-	<div class="sidebar fleft">
-    	<div class="title">服务项目 Service</div>
-        <ul class="menu">
-        	<li>拆旧、敲墙、酒店、商场</li>
-            <li>宾馆拆旧工程</li>
-            <li>建筑工地废旧厂房拆酒店</li>
-            <li>娱乐场所</li>
-            <li>建筑工地及家庭</li>
-        </ul>
-        <div class="title mt10">联系我们 Contact</div>
-        <div class="contact_nr">
-        	<p><b class="f15">XX工程有限公司</b></p>
-            <p>电话：130555555</p>
-            <p>传真：0517-85932887</p>
-            <p>地址：淮安天桥区北园大街548号</p>
-            <p>网址：www.gggg.com</p>
-        </div>
-        
-    </div>
-
-	<!--右侧-->
-    <div class="main_right fright">
-    
-    	<div class="clearfix">
-        
-    	<!--公司简介-->
-    	<div class="company fleft">
-        	<div class="t1"><a href=""><img src="images/more.jpg"></a><span>公司简介</span></div>
-            <div class="nr f13">
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;拆旧 各种砸墙、砸地砖 铲墙皮、旧房改造，拆隔墙门窗等 清理垃圾 建筑垃圾 垃圾清理 敲墙 敲墙、改结构 酒店、商场,宾馆拆旧工程： 室内结构包括（拆吊顶、拆电缆电线、拆通风系统、拆隔间、拆地板、砸墙、砸地平,室外结构包括：拆广告牌、拆霓虹灯、拆铝合金门窗等。 建筑工地： 拆活动房、拆配电房、拆建筑废料、拆电线电缆、拆水暖器件、拆钢管扣件及门窗材料等。...<a href="" class="c_red">[详细]</a></p>
-            <p><img src="images/gs_t.jpg" width="395" height="105"></p>
+    <header>
+        <div class="hd">
+            <div class="header">
+                <img id="logo" src="res/common/LOGO-3.png" alt="">
+                <ul>
+                    <li class="head-sel">首页</li>
+                    <li>基础服务</li>
+                    <li>金融服务</li>
+                    <li>进口商铺</li>
+                    <li>关于我们</li>
+                    <li>咨询中心</li>
+                    <li>
+                        <img src="res/common/Mine-pic.png" alt="">
+                        <div id="login-reg">
+                            <button type="button"><img src="res/index/login-red.png" alt="">立即登录</button>
+                            <button type="button"><img src="res/index/reg-icon-red.png" alt="">免费注册</button>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
-        
-        <!--新闻中心-->
-        <div class="news fright">
-        	<div class="t1"><a href=""><img src="images/more.jpg"></a><span>新闻中心</span></div>
+    </header>
+
+    <!--轮播图-->
+    <section id="banner">
+        <div id="wrapper">
+            <div class="slider-wrapper theme-default">
+                <div id="slider" class="nivoSlider">
+                    <img src="res/banner/banner4.png" data-thumb="res/index/banner图.png" alt="" >
+                    <img src="res/banner/banner1.jpg" data-thumb="res/index/banner图.png" alt="" >
+                    <img src="res/banner/banner2.jpg" data-thumb="res/index/banner图.png" alt="" >
+                    <img src="res/banner/banner3.jpg" data-thumb="res/index/banner图.png" alt="" >
+                    <img src="res/banner/banner1.jpg" data-thumb="res/index/banner图.png" alt="" >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--轮播图下方的图示-->
+    <div class="link" style="display: none">
+        <div>
             <ul>
-            	<li><a href="">这里是新闻标题这里是新闻标题这里是新闻标题</a></li>
-                <li><a href="">这里是新闻标题这里是新闻标题这里是新闻标题</a></li>
-                <li><a href="">这里是新闻标题这里是新闻标题这里是新闻标题</a></li>
-                <li><a href="">这里是新闻标题这里是新闻标题这里是新闻标题</a></li>
-                <li><a href="">这里是新闻标题这里是新闻标题这里是新闻标题</a></li>
-                <li><a href="">这里是新闻标题这里是新闻标题这里是新闻标题</a></li>
-                <li><a href="">这里是新闻标题这里是新闻标题这里是新闻标题</a></li>
-                <li><a href="">这里是新闻标题这里是新闻标题这里是新闻标题</a></li>
+                <li>
+                    <img src="res/index/wenmao.png" alt="">
+                    <label for="">温贸服</label>
+                    <p>传统行业与新兴互联网行业的集聚效应</p>
+                </li>
+                <li>
+                    <img src="res/index/zero.png" alt="">
+                    <label for="">零收费</label>
+                    <p>免收服务费</p>
+                </li>
+                <li>
+                    <img src="res/index/clearance-q.png" alt="">
+                    <label for="">通关快捷</label>
+                    <p>海关认证企业，专业团队为您保驾护航，打造高效通关速度</p>
+                </li>
+                <li>
+                    <img src="res/index/Advance-tax.png" alt="">
+                    <label for="">垫付退税</label>
+                    <p>合规报批，安全通畅，单证齐全最快3个工作日到款</p>
+                </li>
+                <li>
+                    <img src="res/index/Collection-s.png" alt="">
+                    <label for="">收汇安全</label>
+                    <p>专业团队把控市场风险、信用风险、操作风险和政策性风险</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!--基础服务-->
+    <section id="basis">
+        <div class="sec-tit">
+            <span>基础服务</span>
+            <div></div>
+            <span>BASIC SERVICES</span>
+        </div>
+
+        <div class="sec-con">
+            <ul>
+                <li>
+                    <img src="res/index/Toll.png" alt=""><br>
+                    <span>收费</span><br>
+                    <label for="">一站服务，低收费率</label>
+                </li>
+                <li>
+                    <img src="res/index/clearance.png" alt=""><br>
+                    <span>通关</span><br>
+                    <label for="">绿色通道，快捷简单</label>
+                </li>
+                <li>
+                    <img src="res/index/tax-rebate.png" alt=""><br>
+                    <span>退税补贴</span><br>
+                    <label for="">快捷专业，正规合法</label>
+                </li>
+                <li>
+                    <img src="res/index/Collection.png" alt=""><br>
+                    <span>收汇</span><br>
+                    <label for="">安全高效，结算快</label>
+                </li>
+                <li>
+                    <img src="res/index/wuliu.png" alt=""><br>
+                    <span>物流</span><br>
+                    <label for="">安全、高效、价廉</label>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!--金融服务-->
+    <section id="financial">
+        <div class="sec-tit">
+            <span style="color: #FFFFFF">金融服务</span>
+            <div></div>
+            <span style="color: #FFFFFF">FINANCIAL SERVICES</span>
+        </div>
+
+        <div class="fin-sec">
+            <div class="bd-img" style="margin-left: 0">
+                <div class="class-1">
+                    <div class="class-2">
+                        <img src="res/financial/bao-w.png" alt="">
+                    </div>
+                </div>
+                <span>保单贷</span><br>
+                <label for="">保费30%返还</label><br>
+                <p>
+                    与中信保战略合作，
+                    帮您降低金融和外贸
+                    风险，为您的出口
+                    “保驾护航”。同时温
+                    州生产型出口企业的
+                    出口短险保费可获
+                    30%补助。
+                </p><br>
+                <img class="fin-img" src="res/financial/0.png" alt="">
+            </div>
+
+            <div class="bd-img">
+                <div class="class-1">
+                    <div class="class-2">
+                        <img src="res/financial/mai-w.png" alt="">
+                    </div>
+                </div>
+                <span>买方贷款</span><br>
+                <label for="">提供融资定制化服务</label><br>
+                <p>
+                    小额买方信贷：是国
+                    贸温州公司联合中信
+                    保、银行针对浙江区
+                    域经济发展的特点量
+                    身定制的，针对进口
+                    商提供的优惠贷款。
+                </p><br>
+                <img class="fin-img" src="res/financial/0.png" alt="">
+            </div>
+
+            <div class="bd-img">
+                <div class="class-1">
+                    <div class="class-2">
+                        <img src="res/financial/wei-w.png" alt="">
+                    </div>
+                </div>
+                <span>尾款融资</span><br>
+                <label for="">提前拿到货款</label><br>
+                <p>
+                    小额买方信贷：是国
+                    贸温州公司联合中信
+                    保、银行针对浙江区
+                    域经济发展的特点量
+                    身定制的，针对进口
+                    商提供的优惠贷款。
+                </p><br>
+                <img class="fin-img" src="res/financial/0.png" alt="">
+            </div>
+
+            <div class="bd-img">
+                <div class="class-1">
+                    <div class="class-2">
+                        <img src="res/financial/suo-w.png" alt="">
+                    </div>
+                </div>
+                <span>锁汇宝</span><br>
+                <label for="">锁定目标利润</label><br>
+                <p>
+                    国贸温州公司会根据
+                    您的需求，为您提供
+                    大客户专享的远期结
+                    售汇服务，规避汇率
+                    波动风险，提前锁定
+                    目标利润。
+                </p><br>
+                <img class="fin-img" src="res/financial/0.png" alt="">
+            </div>
+
+            <div class="bd-img">
+                <div class="class-1">
+                    <div class="class-2">
+                        <img src="res/financial/dian-w.png" alt="">
+                    </div>
+                </div>
+                <span>垫税融资</span><br>
+                <label for="">加速资金周转</label><br>
+                <p>
+                    单据齐全后，最快3
+                    个工作日即可获得退
+                    税垫付，有效提高资
+                    金周转效率。
+                </p><br>
+                <img class="fin-img" src="res/financial/0.png" alt="">
+            </div>
+
+            <div class="bd-img">
+                <div class="class-1">
+                    <div class="class-2">
+                        <img src="res/financial/bei-w.png" alt="">
+                    </div>
+                </div>
+                <span>备货融资</span><br>
+                <label for="">帮您解决生产资金</label><br>
+                <p>
+                    国贸温州公司基于您
+                    的真实贸易背景，根
+                    据订单，为您垫付一
+                    定比例采购资金，用
+                    于订单项下的备货生
+                    产，让您的生意顺利
+                    起航。
+                </p><br>
+                <img class="fin-img" src="res/financial/0.png" alt="">
+            </div>
+
+            <div class="bd-img">
+                <div class="class-1">
+                    <div class="class-2">
+                        <img src="res/financial/maid-w.png" alt="">
+                    </div>
+                </div>
+                <span>买断融资</span><br>
+                <label for="">提前拿到货款</label><br>
+                <p>
+                    国贸温州公司提供的
+                    信用证审核、制单、
+                    交单、买断垫付的
+                    “一站式”专业服务，
+                    全程解决您接单的所
+                    有难题。
+                </p><br>
+                <img class="fin-img" src="res/financial/0.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!--服务流程-->
+    <section id="ser-pro">
+        <div class="sec-tit">
+            <span>服务流程</span>
+            <div></div>
+            <span>SERVICE PROCESS</span>
+        </div>
+
+        <ul>
+            <li>
+                <img src="res/index/Online-Application.png" alt="">
+                <span>在线申请</span>
+            </li>
+            <li><img src="res/index/turn-right.png" alt=""><br></li>
+            <li>
+                <img src="res/index/confirm-coo.png" alt="">
+                <span>确认合作</span>
+            </li>
+            <li><img src="res/index/turn-right.png" alt=""></li>
+            <li>
+                <img src="res/index/Online-orders.png" alt="">
+                <span>在线下单</span>
+            </li>
+            <li><img src="res/index/turn-right.png" alt=""></li>
+            <li>
+                <img src="res/index/clearance.png" alt="">
+                <span>通关</span>
+            </li>
+            <li><img src="res/index/turn-right.png" alt=""></li>
+            <li>
+                <img src="res/index/Foreign-exchange.png" alt="">
+                <span>外汇</span>
+            </li>
+            <li><img src="res/index/turn-right.png" alt=""></li>
+            <li>
+                <img src="res/index/tax-reb.png" alt=""><br>
+                <span>退税</span>
+            </li>
+        </ul>
+    </section>
+
+    <!--新闻法规-->
+    <section id="news">
+        <!--<img src="res/index/行业新闻政策法规背景图.png" alt="" width="100%" height="550">-->
+        <div class="news-con">
+            <div class="news-1">
+                <label for="">行业新闻</label><img src="res/index/news-x.png" alt=""><span>INDUSTRY NEWS</span>
+                <button id="news-btn" type="button">更多</button>
+                <br>
+                <ul>
+                    <li>
+                        <img src="res/index/news-sm.png" alt="">
+                        <div>
+                            <label for="">智能仓储降本增效显著 掀起物流行业新玩法</label><br>
+                            <p class="news-p">
+                                近年，我过社会物流费用占GDP比重高达16
+                                %，是美国的两倍左右，高于亚太地区平均...
+                            </p>
+                            <span>02/28</span>
+                        </div>
+                    </li>
+                    <div style="width: 0px;height: 0px;clear: both"></div>
+                    <li><label for="">浙江省公路发展“十三五”蓝图 将有那些商机和变化？</label><span>02/28</span></li>
+                    <li><label for="">十个假货最多的汽车配件，你中招了吗？</label><span>02/28</span></li>
+                    <li><label for="">家居床垫蓝海尽显，定制多功能性型受海外消费者偏...</label><span>02/28</span></li>
+                    <li><label for="">海关发布丨2017年1月我国外贸进出口增长</label><span>02/28</span></li>
+                </ul>
+            </div>
+
+            <div class="pol-1">
+                <label for="">政策法规</label><img src="res/index/news-x.png" alt=""><span>INDUSTRY NEWS</span>
+                <button id="policy-btn" type="button">更多</button>
+                <br>
+                <ul>
+                    <li>
+                        <img src="res/index/policy-sm.png" alt="">
+                        <div>
+                            <label for="">海关总署关于7月1日起报关单填制规范有关...</label><br>
+                            <p class="news-p">
+                                为进一步便利《中华人民共和国政府和大韩民
+                                国政府自由贸易协定》（以下简称《协...
+                            </p>
+                            <span>02/28</span>
+                        </div>
+                    </li>
+                    <div style="width: 0px;height: 0px;clear: both"></div>
+                    <li><label for="">关于提高机电、成品油等产品出口退税率的通知</label><span>02/28</span></li>
+                    <li><label for="">关于优惠贸易协定项下进出口货物报关单填制规范的...</label><span>02/28</span></li>
+                    <li><label for="">国务院提出十四条意见，促进外贸回稳向好</label><span>02/28</span></li>
+                    <li><label for="">国务院关于加快培育外贸竞争新优势的 若干意见</label><span>02/28</span></li>
+                </ul>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!--常用工具-->
+    <section id="tool">
+        <div class="sec-tit">
+            <span>常用工具</span>
+            <div></div>
+            <span>COMMON UTILITY</span>
+        </div>
+
+        <ul>
+            <li>
+                <img src="res/index/Exchange-rate-inquiry.png" alt="">
+                <label for="">汇率查询</label>
+                <span>Exchange rate query</span>
+            </li>
+            <li>
+                <img src="res/index/tax-in.png" alt="">
+                <label for="">税率查询</label>
+                <span>Tax query</span>
+            </li>
+            <li>
+                <img src="res/index/National-currency-inquiries.png" alt="">
+                <label for="">各国货币查询</label>
+                <span>Currency inquiry</span>
+            </li>
+            <li>
+                <img src="res/index/English-abb.png" alt="">
+                <label for="">英文缩写查询</label>
+                <span>English abbreviation</span>
+            </li>
+            <li>
+                <img src="res/index/online-translation.png" alt="">
+                <label for="">在线翻译</label>
+                <span>Translation online</span>
+            </li>
+            <li>
+                <img src="res/index/Express-inquiry.png" alt="">
+                <label for="">快递查询</label>
+                <span>Express query</span>
+            </li>
+            <li>
+                <img src="res/index/Global-map-location.png" alt="">
+                <label for="">全球地图定位</label>
+                <span>Map location</span>
+            </li>
+            <li>
+                <img src="res/index/National-currency.png" alt="">
+                <label for="">各国货币</label>
+                <span>Currency inquiry</span>
+            </li>
+            <li>
+                <img src="res/index/HS.png" alt="">
+                <label for="">HS编码查询</label>
+                <span>HS code query</span>
+            </li>
+            <li>
+                <img src="res/index/more.png" alt="">
+                <label for="">更多功能</label>
+                <span>More features</span>
+            </li>
+        </ul>
+    </section>
+
+    <!--合作单位-->
+    <section id="Co">
+        <div class="sec-tit">
+            <span>合作单位</span>
+            <div></div>
+            <span>COMMON UTILITY</span>
+        </div>
+
+        <div>
+            <ul>
+                <li><img src="res/index/rongyitong.png" alt="" width="165" height="88"></li>
+                <li><img src="res/index/CITIC-Bank.png" alt="" width="148" height="47"></li>
+                <li><img src="res/index/ele-port.png" alt="" width="171" height="47"></li>
+                <li><img src="res/index/CPIC.png" alt="" width="92" height="47"></li>
+                <li><img src="res/index/shenhuag.png" alt="" width="236" height="47"></li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <div class="top">
+            <!--关于我们-->
+            <ul style="margin-left: 0">
+                <li>关于我们</li>
+                <li>企业简介</li>
+                <li>平台价值</li>
+                <li>招贤纳士</li>
+                <li>合作单位</li>
+            </ul>  
+            <!--服务-->
+            <ul>
+                <li>服务介绍</li>
+                <li>基础服务</li>
+                <li>金融服务</li>
+                <li>增值业务</li>
+            </ul>
+            <!--平台咨询-->
+            <ul>
+                <li>平台资讯</li>
+                <li>平台资讯</li>
+                <li>行业新闻</li>
+            </ul>
+            <!--常用工具-->
+            <ul>
+                <li>常用工具</li>
+                <li>汇率查询</li>
+                <li>税率查询</li>
+                <li>各国货币查询</li>
+                <li>英文缩写查询</li>
+                <li>在线翻译</li>
+                <li>快递查询</li>
+                <li>全球地图定位</li>
+                <li>度量制度</li>
+                <li>HS编码查询</li>
+            </ul>
+            <!--联系我们-->
+            <ul id="contact">
+                <li>联系我们</li>
+                <li>7x24小时热线</li>
+                <li>400-117-2277</li>
+                <li>公司传真：0086-576-89029758</li>
+                <li>公司地址：浙江省温州市隔岸路60号</li>
             </ul>
         </div>
         
-        
+        <div class="bottom">
+            <span>Copyright 2016浙江省国际贸易集团有限公司（温州） All rights Reserved.</span><br>
+            <span>ICP备案号：浙ICP备15010359号</span>
         </div>
-        
-        <!--产品展示-->
-        <div class="cp_show clearfix">
-        	<div class="title t1"><a href=""><img src="images/more.jpg"></a>案例展示</div>
-            <div class="picScroll">
-		
-		<ul>
-			<li><a target="_blank" href="#"><img _src="images/cp_cp.png" src="images/blank.png" /><p>案例展示名称</p></a></li>
-			<li><a target="_blank" href="#"><img _src="images/cp_cp.png" src="images/blank.png" /><p>案例展示名称</p></a></li>
-			<li><a target="_blank" href="#"><img _src="images/cp_cp.png" src="images/blank.png" /><p>案例展示名称</p></a></li>
-			<li><a target="_blank" href="#"><img _src="images/cp_cp.png" src="images/blank.png" /><p>案例展示名称</p></a></li>
-			<li><a target="_blank" href="#"><img _src="images/cp_cp.png" src="images/blank.png" /><p>案例展示名称</p></a></li>
-			<li><a target="_blank" href="#"><img _src="images/cp_cp.png" src="images/blank.png" /><p>案例展示名称</p></a></li>
-			<li><a target="_blank" href="#"><img _src="images/cp_cp.png" src="images/blank.png" /><p>案例展示名称</p></a></li>
-			<li><a target="_blank" href="#"><img _src="images/cp_cp.png" src="images/blank.png" /><p>案例展示名称</p></a></li>
-			<li><a target="_blank" href="#"><img _src="images/cp_cp.png" src="images/blank.png" /><p>案例展示名称</p></a></li>
-			<li><a target="_blank" href="#"><img _src="images/cp_cp.png" src="images/blank.png" /><p>案例展示名称</p></a></li>
-		</ul>
-
-	</div>
-        </div>
-        
-    </div>
-
-
-
-</div>
-
-
-<div class="foot tcenter yh f13">
-	<p>联系人：林先生 13023288071</p>
-	<p>Copyright © 2014-2015 www.haiis.com,All Rights Reserved 来源:<a href="http://www.mycodes.net/" target="_blank">源码之家</a></p>
-    
-</div>
-
-
-<script src="js/all.js" type="text/javascript"></script>
+    </footer>
 </body>
+<script src="js/jquery-3.1.1.js"></script>
+<script src="js/jquery.nivo.slider.js"></script>
+<script>
+    $(document).ready(function () {
+        //头部跳转
+        $('.header').find('li:eq(1)').on('click',function () {
+            window.location.href = 'html/service-basis.html';
+        });
+        $('.header').find('li:eq(2)').on('click',function () {
+            window.location.href = 'html/service-financial.html';
+        });
+        $('.header').find('li:eq(4)').on('click',function () {
+            window.location.href = 'html/service-about.html';
+        });
+        $('.header').find('li:eq(5)').on('click',function () {
+            window.location.href = 'html/advisory.html';
+        });
+        $('.header').find('li:eq(6)').hover(function () {
+            $(this).find('#login-reg').show();
+            $(this).find('#login-reg>button:last-child').on('click',function () {
+                window.location.href = 'html/reg.html';
+            });
+        },function () {
+            $(this).find('#login-reg').hide();
+            }
+        );
+        $('#login-reg').find('button:first-child').on({
+            mouseover:function () {
+                $(this).find('img').attr('src','res/index/login.png');
+            },
+            mouseout:function () {
+                $(this).find('img').attr('src','res/index/login-red.png');
+            }
+        });
+        $('#login-reg').find('button:last-child').on({
+            mouseover:function () {
+                $(this).find('img').attr('src','res/index/reg-icon.png');
+            },
+            mouseout:function () {
+                $(this).find('img').attr('src','res/index/reg-icon-red.png');
+            }
+        });
+
+        //基础服务跳转
+        $('#basis').find('.sec-con li').on('click',function () {
+            window.location.href = 'html/service-basis.html';
+        });
+
+        //行业新闻和政策法规跳转
+        $('#news').find('.news-con #news-btn').on('click',function () {
+            window.location.href = 'html/news.html';
+        });
+        $('#news').find('.news-con #policy-btn').on('click',function () {
+            window.location.href = 'html/policy.html';
+        });
+        $('#news').find('.news-con .news-1 li').on('click',function () {
+            window.location.href = 'html/news-det.html';
+        });
+        $('#news').find('.news-con .pol-1 li').on('click',function () {
+            window.location.href = 'html/policy-det.html';
+        });
+
+        //底部跳转
+        $('.top').find('ul:first-child>li').on('click',function () {
+            window.location.href = 'html/service-about.html';
+        });
+        $('.top').find('ul:nth-child(2)>li:nth-child(2)').on('click',function () {
+            window.location.href = 'html/service-basis.html';
+        });
+        $('.top').find('ul:nth-child(2)>li:nth-child(3)').on('click',function () {
+            window.location.href = 'html/service-financial.html';
+        });
+        $('.top').find('ul:nth-child(3)>li:nth-child(3)').on('click',function () {
+            window.location.href = 'html/news.html';
+        });
+
+        //banner
+        $('#slider').nivoSlider();
+
+        //顶部导航悬浮
+        $(window).scroll(function () {
+            var h = $(this).scrollTop();
+            var img = $('.header #logo');
+            if (h > 300){
+                $('.hd').css({
+                    'position':'fixed',
+                    'top':'0',
+                    'background':'#2A363A',
+                    'opacity':'0.8'
+                });
+                $('.hd').find('li').css({
+                    'color':'#FFFFFF'
+                });
+                img.attr('src','res/common/LOGO-2.png');
+            }else {
+                $('.hd').css({
+                    'position':'static',
+                    'background':'transparent',
+                    'color':'#FFFFFF'
+                });
+                $('.hd').find('li').css({
+                    'color':'#2A363A'
+                });
+                img.attr('src','res/common/LOGO-3.png');
+            }
+        });
+
+        //金融服务效果
+        $('.bd-img').on({
+            mouseover:function () {
+                $(this).find('.class-1').css({
+                    background:'rgba(255,255,255,0.8)'
+                });
+                $(this).find('.class-2').css({
+                    background:'#FFFFFF'
+                });
+            },
+            mouseout:function () {
+                $(this).find('.class-1').css({
+                    background:'rgba(128,5,0,0.1)'
+                });
+                $(this).find('.class-2').css({
+                    background:'#8D8D8D'
+                });
+            }
+        });
+        $('.bd-img:first-child').on({
+            mouseover:function () {
+                $(this).find('.class-1 img').attr('src','res/financial/bao-r.png');
+            },
+            mouseout:function () {
+                $(this).find('.class-1 img').attr('src','res/financial/bao-w.png');
+            }
+        });
+        $('.bd-img:nth-child(2)').on({
+            mouseover:function () {
+                $(this).find('.class-1 img').attr('src','res/financial/mai-r.png');
+            },
+            mouseout:function () {
+                $(this).find('.class-1 img').attr('src','res/financial/mai-w.png');
+            }
+        });
+        $('.bd-img:nth-child(3)').on({
+            mouseover:function () {
+                $(this).find('.class-1 img').attr('src','res/financial/wei-r.png');
+            },
+            mouseout:function () {
+                $(this).find('.class-1 img').attr('src','res/financial/wei-w.png');
+            }
+        });
+        $('.bd-img:nth-child(4)').on({
+            mouseover:function () {
+                $(this).find('.class-1 img').attr('src','res/financial/suo-r.png');
+            },
+            mouseout:function () {
+                $(this).find('.class-1 img').attr('src','res/financial/suo-w.png');
+            }
+        });
+        $('.bd-img:nth-child(5)').on({
+            mouseover:function () {
+                $(this).find('.class-1 img').attr('src','res/financial/dian-r.png');
+            },
+            mouseout:function () {
+                $(this).find('.class-1 img').attr('src','res/financial/dian-w.png');
+            }
+        });
+        $('.bd-img:nth-child(6)').on({
+            mouseover:function () {
+                $(this).find('.class-1 img').attr('src','res/financial/bei-r.png');
+            },
+            mouseout:function () {
+                $(this).find('.class-1 img').attr('src','res/financial/bei-w.png');
+            }
+        });
+        $('.bd-img:nth-child(7)').on({
+            mouseover:function () {
+                $(this).find('.class-1 img').attr('src','res/financial/maid-r.png');
+            },
+            mouseout:function () {
+                $(this).find('.class-1 img').attr('src','res/financial/maid-w.png');
+            }
+        });
+        $('.fin-sec').find('.bd-img').on({
+            mouseover:function () {
+                $(this).find('.fin-img').attr('src','res/financial/1.png');
+            },
+            mouseout:function () {
+                $(this).find('.fin-img').attr('src','res/financial/0.png');
+            }
+        });
+
+        //新闻法规
+        $('.news-con').find('ul>li:first-child').on({
+            mouseover:function () {
+                $(this).find('.news-p').css({
+                    color:'red'
+                });
+            },
+            mouseout:function () {
+                $(this).find('.news-p').css({
+                    color:'#969696'
+                });
+            }
+        });
+
+        //常用工具效果
+        $('#tool').find('ul>li:first-child').on({
+            mouseover:function () {
+                $(this).find('img').attr('src','res/index/Exchange-rate-inquiry-2.png');
+            },
+            mouseout:function () {
+                $(this).find('img').attr('src','res/index/Exchange-rate-inquiry.png');
+            }
+        });
+        $('#tool').find('ul>li:nth-child(2)').on({
+            mouseover:function () {
+                $(this).find('img').attr('src','res/index/tax-in-2.png');
+            },
+            mouseout:function () {
+                $(this).find('img').attr('src','res/index/tax-in.png');
+            }
+        });
+        $('#tool').find('ul>li:nth-child(3)').on({
+            mouseover:function () {
+                $(this).find('img').attr('src','res/index/National-currency-inquiries-2.png');
+            },
+            mouseout:function () {
+                $(this).find('img').attr('src','res/index/National-currency-inquiries.png');
+            }
+        });
+        $('#tool').find('ul>li:nth-child(4)').on({
+            mouseover:function () {
+                $(this).find('img').attr('src','res/index/English-abb-2.png');
+            },
+            mouseout:function () {
+                $(this).find('img').attr('src','res/index/English-abb.png');
+            }
+        });
+        $('#tool').find('ul>li:nth-child(5)').on({
+            mouseover:function () {
+                $(this).find('img').attr('src','res/index/online-translation-2.png');
+            },
+            mouseout:function () {
+                $(this).find('img').attr('src','res/index/online-translation.png');
+            }
+        });
+        $('#tool').find('ul>li:nth-child(6)').on({
+            mouseover:function () {
+                $(this).find('img').attr('src','res/index/Express-inquiry-2.png');
+            },
+            mouseout:function () {
+                $(this).find('img').attr('src','res/index/Express-inquiry.png');
+            }
+        });
+        $('#tool').find('ul>li:nth-child(7)').on({
+            mouseover:function () {
+                $(this).find('img').attr('src','res/index/Global-map-location-2.png');
+            },
+            mouseout:function () {
+                $(this).find('img').attr('src','res/index/Global-map-location.png');
+            }
+        });
+        $('#tool').find('ul>li:nth-child(8)').on({
+            mouseover:function () {
+                $(this).find('img').attr('src','res/index/National-currency-2.png');
+            },
+            mouseout:function () {
+                $(this).find('img').attr('src','res/index/National-currency.png');
+            }
+        });
+        $('#tool').find('ul>li:nth-child(9)').on({
+            mouseover:function () {
+                $(this).find('img').attr('src','res/index/HS-2.png');
+            },
+            mouseout:function () {
+                $(this).find('img').attr('src','res/index/HS.png');
+            }
+        });
+        $('#tool').find('ul>li:nth-child(10)').on({
+            mouseover:function () {
+                $(this).find('img').attr('src','res/index/more-2.png');
+            },
+            mouseout:function () {
+                $(this).find('img').attr('src','res/index/more.png');
+            }
+        });
+
+    });
+</script>
 </html>

@@ -1,0 +1,140 @@
+section{
+    width: 1200px;
+    height: auto;
+    margin: 30px auto 0;
+}
+.ser-nav{
+    width: 100%;
+    height: auto;
+    padding-top: 30px;padding-bottom: 30px;
+    border-bottom: 1px solid #D8DADE;
+}
+.ser-nav button{
+    float: right;
+}
+section>label{
+    width: auto;
+    height: 28px;
+    display: inline-block;
+    font-size: 28px;
+    color: #2A363A;
+    line-break: 28px;
+    padding-left: 20px;
+    border-left: 4px solid red;
+    margin-top: 20px;margin-left: 30px;
+}
+
+#pro{
+    height: auto;
+    padding-left: 30px;
+    overflow: hidden;
+    margin-bottom: 0px;
+}
+#pro>input{
+    width: 520px;
+    height: 44px;
+    line-height: 44px;
+    border: 2px solid #D8DADE;
+    font-size: 14px;
+    color: #969696;
+    padding-left: 15px;
+    margin-top: 10px;margin-left: 30px;
+}
+#pro>input::-webkit-input-placeholder{
+    font-size: 14px;
+    color: #969696;
+}
+#pro>input:-ms-input-placeholder{
+    font-size: 14px;
+    color: #969696;
+}
+#pro>input::-moz-placeholder{
+    font-size: 14px;
+    color: #969696;
+}
+#pro>button{
+    width: 100px;
+    height: 44px;
+    line-height: 40px;
+    text-align: center;
+    background: #2A363A;
+    font-size: 18px;
+    color: #FFFFFF;
+    margin-left: 10px;
+    position: relative;top: 2px;
+}
+
+#pro>.hhh{
+    width: 1200px;
+    height: 50px;
+    margin-top: 30px;
+    background: #EDEFF3;
+    padding-left: 30px;padding-top: 15px;
+}
+#pro>.hhh>label{
+    font-size: 20px;
+    color: #2A363A;
+    line-height: 20px;
+}
+#pro label.sss{
+    color: #DA241C;
+}
+
+#pro>ul.que{
+    width: 1080px;
+    height: auto;
+}
+#pro>ul.que>li{
+    width: 1080px;
+    height: auto;
+    margin: 30px 30px 20px;
+}
+#pro>ul.que>li>label{
+    font-size: 18px;
+    color: #001800;
+}
+#pro>ul.que>li>label.sss{
+    color: #DA241C;
+}
+#pro>ul.que>li>p{
+    font-size: 16px;
+    color: #818585;
+    line-height: 26px;
+    margin-top: 10px;
+}
+
+/*=========================没有相关问题的样式======================*/
+#pro #none-img{
+    width: 600px;
+    height: 330px;
+    margin: 50px auto 100px;
+}
+#pro>#que-sss{
+    width: auto;
+    height: auto;
+    background: #FFFFFF;
+    border: 1px solid #979797;
+    margin-top: 20px;
+    margin-bottom: 200px;
+    padding-left: 60px;padding-top: 10px;padding-bottom: 30px;
+    overflow: hidden;
+}
+#pro>#que-sss>li{
+    width: 180px;
+    line-height: 20px;
+    float: left;
+    margin-left: 100px;margin-top: 16px;
+    font-size: 14px;
+    color: #2A363A;
+    cursor: pointer;
+}
+#pro>#que-sss>li:hover{
+    color: #DA241C;
+    font-weight: bold;
+}
+#pro>#que-sss>li.link-sel{
+    color: #DA241C;
+}
+#pro>#que-sss>li:nth-child(4n+1){
+    margin-left: 0;
+}
