@@ -1,35 +1,36 @@
 /*==========================头部通用===========================*/
-header{
+　 header {
     width: 100%;
     height: 90px;
     /*overflow: hidden;*/
     z-index: 4;
 }
-header .hd{
+header .hd {
     width: 100%;
     height: 90px;
     /*overflow: hidden;*/
     z-index: 3;
 }
-header .header{
+header .header {
     width: 1200px;
     height: 90px;
     margin: 0px auto;
     overflow: hidden;
 }
-header .header>img{
+header .header > img {
     display: inline-block;
     margin-top: 21px;
     float: left;
 }
-header .header>ul{
+header .header > ul {
     width: auto;
-    height: 90px;line-height: 90px;
+    height: 90px;
+    line-height: 90px;
     display: inline-block;
     float: right;
     overflow: hidden;
 }
-header .header>ul>li{
+header .header > ul > li {
     width: 64px;
     height: 90px;
     line-height: 90px;
@@ -37,17 +38,20 @@ header .header>ul>li{
     margin-left: 40px;
     cursor: pointer;
 }
-header .header>ul>li:hover{
+header .header > ul > li:hover {
     /*color: #DA241C;*/
     font-weight: bold;
 }
-header .header>ul>li:nth-child(2){ margin-left: 10px}
-header .header>ul>li>img{
+header .header > ul > li:nth-child(2) {
+    margin-left: 10px;
+}
+header .header > ul > li > img {
     display: inline-block;
-    position: relative;top: 20px;
+    position: relative;
+    top: 20px;
 }
 /*=============登录和注册=========*/
-header #login-reg{
+header #login-reg {
     width: 122px;
     height: 86px;
     background-image: url("../res/index/login-x.png");
@@ -58,137 +62,141 @@ header #login-reg{
     z-index: 3;
     display: none;
 }
-header #login-reg>button{
+header #login-reg > button {
     width: 82px;
     height: 20px;
     margin-left: 20px;
-    border: 1px solid #DA241C;
+    border: 1px solid #da241c;
     border-radius: 4px;
-    color: #DA241C;
+    color: #da241c;
     display: inline-block;
     font-size: 12px;
     line-height: 16px;
     position: absolute;
 }
-header #login-reg>button>img{
+header #login-reg > button > img {
     position: relative;
     top: 1px;
 }
-header #login-reg>button:first-child{
+header #login-reg > button:first-child {
     top: 24px;
 }
-header #login-reg>button:last-child{
+header #login-reg > button:last-child {
     top: 54px;
 }
-header #login-reg>button:hover{ color: #FFFFFF;font-weight: bold;background: #DA241C}
+header #login-reg > button:hover {
+    color: #ffffff;
+    font-weight: bold;
+    background: #da241c;
+}
 
-
-.link-sel{
+.link-sel {
     font-weight: bold;
 }
-.head-sel{
+.head-sel {
     font-weight: bold;
 }
 
 /*-----------页面导航位置----------*/
-div.nav{
+div.nav {
     width: 100%;
     height: 100px;
 }
-.nav>div{
+.nav > div {
     width: 1200px;
     height: 100px;
     margin: 0 auto;
 }
-.nav>div div{
+.nav > div div {
     float: left;
 }
-.nav>div>#div-1{
+.nav > div > #div-1 {
     width: 14px;
     height: 100px;
-    background: #FFFFFF;
+    background: #ffffff;
 }
-.nav>div>#div-2{
+.nav > div > #div-2 {
     width: 10px;
     height: 100px;
     margin-left: 10px;
-    background: #FFFFFF;
+    background: #ffffff;
 }
-.nav>div>label{
+.nav > div > label {
     display: inline-block;
     width: 128px;
     line-height: 100px;
-    color: #2A363A;
+    color: #2a363a;
     font-size: 32px;
     font-weight: bold;
     margin-left: 20px;
     float: left;
 }
-.nav>div>#div-3{
+.nav > div > #div-3 {
     width: 4px;
-    height: 20px;line-height: 100px;
+    height: 20px;
+    line-height: 100px;
     background: red;
     float: left;
-    margin-top: 42px;margin-left: 10px;
+    margin-top: 42px;
+    margin-left: 10px;
 }
 
 /*=======================中间内容块通用设置======================*/
-section{
+section {
     width: 100%;
     min-height: 300px;
     margin: 0 auto;
     overflow: hidden;
 }
-section .sec-tit>span{
+section .sec-tit > span {
     cursor: default;
 }
 
 /*==============================底部通用==============================*/
-footer{
+footer {
     width: 100%;
     height: auto;
-    background: #2A363A;
+    background: #2a363a;
     padding-top: 20px;
     overflow: hidden;
 }
-footer>.top li{
+footer > .top li {
     cursor: pointer;
-
 }
-footer>.top li:hover{
-    color: #DA241C;
+footer > .top li:hover {
+    color: #da241c;
 }
-footer>.top{
+footer > .top {
     width: 1200px;
     height: auto;
     margin: 0 auto;
     overflow: hidden;
 }
-footer>.top>ul{
+footer > .top > ul {
     width: auto;
     height: auto;
     display: inline-block;
     float: left;
     margin-left: 110px;
 }
-footer>.top>#contact{
+footer > .top > #contact {
     margin-left: 180px;
 }
-footer>.top>ul>li{
+footer > .top > ul > li {
     font-size: 12px;
-    color: #FFFFFF;
+    color: #ffffff;
     margin-top: 20px;
 }
-footer>.top>ul>li:first-child{
+footer > .top > ul > li:first-child {
     font-size: 20px;
-    color: #FFFFFF;
+    color: #ffffff;
     cursor: default;
 }
-footer>.top>ul>li:nth-child(2){
+footer > .top > ul > li:nth-child(2) {
     margin-top: 30px;
 }
 
-footer>.bottom{
+footer > .bottom {
     border-top: 1px solid #818585;
     width: 1200px;
     height: auto;
@@ -196,11 +204,22 @@ footer>.bottom{
     margin: 30px auto 20px;
     overflow: hidden;
 }
-footer>.bottom>span{
+footer > .bottom > span {
     width: 100%;
     line-height: 12px;
     text-align: center;
     display: inline-block;
     font-size: 12px;
-    color: #C8C8C8;
+    color: #c8c8c8;
 }
+.clearfix:after{
+　　　　　　content:"";
+　　　　　　height:0;
+　　　　　　line-height:0;
+　　　　　　display:block;
+　　　　　　visibility:hidden;    
+　　　　　　clear:both;
+}       
+　　　　.clearfix{
+　　　　　　zoom:1;
+　　　　}

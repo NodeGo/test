@@ -13,16 +13,16 @@
     $('.header').find('li:eq(2)').on('click',function () {
         window.location.href = 'service-financial.html';
     });
-    $('.header').find('li:eq(4)').on('click',function () {
+    $('.header').find('li:eq(3)').on('click',function () {
         window.location.href = 'service-about.html';
     });
-    $('.header').find('li:eq(5)').on('click',function () {
+    $('.header').find('li:eq(4)').on('click',function () {
         window.location.href = 'advisory.html';
     });
     $('.header').find('img').on('click',function () {
         window.location.href = '../index.html';
     });
-    $('.header').find('li:eq(6)').hover(function () {
+    $('.header').find('li:eq(5)').hover(function () {
             $(this).find('#login-reg').show();
             $(this).find('#login-reg>button:last-child').on('click',function () {
                 window.location.href = 'reg.html';
